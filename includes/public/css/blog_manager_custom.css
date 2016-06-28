@@ -1,0 +1,423 @@
+/*
+* Blog Manager custon style
+* Author: Themetorium
+* Author URL: http://themeforest.net/user/Themetorium
+*
+* ATTENTION! Blog Manager extension is NOT included in the theme download pack! If you want to use it, you must purchase the extension here: http://www.echothemes.com
+*/
+
+
+#blogCategory, .articleContent, .articleHeader span, .articleHeader span a, .blogModule p, .blogModule .info, #blogCatArticles > p, #comments .commentList, #comments .commentList a {
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0;
+    font-size: 13px;
+}
+
+#blogCatArticles .imageFeatured, .commentList li .avatar, .blogModule .commentList li .avatar, .recentComments .avatar img, .blogModule .image img {
+    max-width: 100% !important;
+    background: none !important;
+}
+#blogCatArticles.imageBlock .imageFeatured {
+    float: left !important;
+}
+
+
+
+
+/**********************
+****** Blog main ******
+***********************/
+i, cite, em, var, address, dfn {
+    font-style: normal !important;
+}
+#blogCatArticles p, #blogArticle p {
+    line-height: 21px !important;
+}
+#blogCatArticles > p, #blogCategory {
+    margin-bottom: 40px !important;
+}
+#blogCatArticles .imageFeatured {
+    margin: 0 15px 10px 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+.updateInfo, .pagination .results {
+    font-size: 13px !important;
+}
+
+/* Begin read more */
+.articleContent .readMore {
+    margin: 0 0 20px 0 !important;
+    padding: 15px 0 15px 0 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #e4e4e4 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+.articleContent .readMore span {
+    margin-left: 15px !important;
+}
+.articleContent .readMore span a {
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+    font-weight: normal !important;
+    color: #D60808 !important;
+}
+.articleContent .readMore span a:hover {
+}
+.articleContent .readMore span.comment a {
+    background: url(../image/bubble.png) no-repeat left;
+    padding-left: 24px !important;
+}
+/* End read more */
+
+/* Begin headings */
+#blogArticle .articleHeader h1, #blogArticle .articleHeader h1 a, #blogCatArticles .articleHeader h3, #blogCatArticles .articleHeader h3 a {
+    text-transform: uppercase !important;
+    color: #42494D !important;
+    font-size: 26px !important;
+    font-weight: normal !important;
+    letter-spacing: 1px !important;
+    padding: 0 !important;
+}
+#blogArticle .articleHeader h1 a:hover, #blogCatArticles .articleHeader h3 a:hover {
+    text-decoration: underline !important;
+}
+.articleBottom h4, #blogCategory h4 {
+    margin: 40px 0 20px !important;
+    text-transform: uppercase !important;
+    font-size: 22px !important;
+    font-weight: normal !important;
+    letter-spacing: 1px !important;
+}
+
+#blogCatArticles.blogCol3 .articleCat .articleHeader h3 a {
+    font-size: 22px !important;
+}
+#blogCatArticles.blogCol4 .articleCat .articleHeader h3 a {
+    font-size: 16px !important;
+}
+/* End headings */
+
+/* Begin headings info */
+.articleHeader {
+    margin-bottom: 20px !important;
+}
+.articleHeader span, .articleHeader span a {
+    color: #888 !important;
+    font-size: 12px !important;
+    letter-spacing: 0 !important;
+}
+.articleHeader span a {
+    font-style: normal !important;
+}
+/* End headings info */
+
+/* Begin tags */
+.tags-update {
+    background-color: rgba(0, 0, 0, 0.06) !important;
+    margin-top: 20px !important;
+    padding: 15px !important;
+    margin-bottom: 40px !important;
+}
+.tags-update .tags a {
+    font-size: 13px !important;
+    font-style: normal !important;
+}
+/* End tags */
+
+/* Begin related articles */
+.articleBottom li a {
+    text-transform: uppercase !important;
+    font-weight: normal !important;
+}
+/* End related articles */
+
+/* Begin related products */
+#column-left + #content .box-product > div, #column-right + #content .box-product > div {
+    width: 190px !important;
+}
+.articleBottom #productRelated .box-product .image img {
+    max-width: 100% !important;
+    margin-bottom: 10px !important;
+}
+.articleBottom #productRelated .box-product .rating {
+    display: none !important;
+}
+.articleBottom #productRelated .box-product a.button {
+    margin-top: 15px !important;
+}
+/* End related products */
+
+/* Begin comments */
+#articleComments {
+    margin: 40px 0 0 0 !important;
+    padding: 30px 0 0 0 !important;
+    background: none !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #e4e4e4 !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+.commentList li {
+    padding: 15px 15px 15px 90px !important;
+    border: none !important;
+}
+.commentList li .avatar, .blogModule .recentComments .avatar img {
+    -webkit-border-radius: 100% !important;
+    -moz-border-radius: 100% !important;
+    -khtml-border-radius: 100% !important;
+    border-radius: 100% !important;
+}
+.commentList li .name {
+    color: inherit !important;
+}
+.commentList li .name a {
+    color: #D60808 !important;
+}
+.commentList .even {
+    background: none !important;
+}
+.commentList .odd {
+    background: rgba(0, 0, 0, 0.06) !important;
+}
+#comments .commentEmpty {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+}
+#commentRespond textarea {
+    width: 98% !important;
+}
+
+.commentList li .reply a, #commentRespond #cancelCommentReply { /* same as "a.button, input.button" */
+    background: #42494D !important;
+    color: #FFF !important;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    -khtml-border-radius: 3px !important;
+    border-radius: 3px !important;
+}
+.commentList li .reply a:hover, #commentRespond #cancelCommentReply:hover {
+    background: #D60808 !important;
+}
+#comments #commentRespond {
+    border-top: 1px solid #e4e4e4 !important;
+}
+/* End comments */
+
+/* Begin search result */
+.blogSearch .compact li {
+    height: 150px  !important;
+}
+/* End search result */
+
+
+
+
+
+/************************
+****** Blog modules *****
+*************************/
+
+.boxPlain .box-content, .boxPlain .box-heading {
+    padding: 0 !important;
+    border: none !important;
+}
+.blogModule ul {
+    line-height: 14px !important;
+}
+.blogModule .box-heading {
+    color: #42494D !important;
+    font-size: 18px !important;
+    font-weight: normal !important;
+    padding-bottom: 9px !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    border-bottom: 1px solid #e4e4e4 !important;
+}
+#column-left .blogModule .box-heading, #column-right .blogModule .box-heading {
+    margin-top: 0 !important;
+}
+.blogModule .image img {
+    float: none !important;
+    margin: 0 0 15px 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.blogModule .image img:hover {
+    opacity: 0.8;
+    filter: Alpha(opacity=50); /* IE8 and earlier */
+}
+.blogModule .title {
+    font-size: 17px !important;
+    text-transform: uppercase !important;
+    color: #42494D !important;
+    font-weight: normal !important;
+    line-height: 28px !important;
+}
+.blogModule li a {
+}
+.blogModule .info {
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+    font-size: 11px !important;
+}
+
+/* Begin categories */
+.blogCategories li, .blogArchives li {
+    padding: 0 !important;
+    background: none !important;
+}
+.blogCategories li a {
+    text-transform: uppercase !important;
+    font-weight: normal !important;
+    font-size: 14px;
+    color: #D60808 !important;
+}
+/* End categories */
+
+/* Begin recent comments */
+.blogModule .recentComments {
+    color: #888;
+}
+.blogModule .recentComments a {
+    font-size: 12px !important;
+}
+.blogModule .recentComments .title {
+    margin-top: 5px !important;
+}
+/* End recent comments */
+
+
+
+/*******************
+****** Sidebar *****
+********************/
+
+#column-left .blogModule li, #column-right .blogModule li {
+    margin-bottom: 15px !important;
+}
+#column-left .blogModule .image img, #column-right .blogModule .image img {
+    float: left !important;
+    margin-right: 10px !important;
+    margin-bottom: 0 !important;
+}
+#column-left .blogModule .title, #column-right .blogModule .title {
+    font-size: 12px !important;
+    display: block !important;
+    margin-bottom: 3px !important;
+    line-height: 18px !important;
+}
+#column-left .blogModule .info, #column-right .blogModule .info {
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+    font-size: 10px !important;
+}
+#column-left .blogModule p, #column-right .blogModule p {
+    font-size: 12px !important;
+    line-height: 18px !important;
+}
+
+
+
+
+
+/**********************
+******** Mobile *******
+***********************/
+
+@media only screen and (min-width: 980px) and (max-width: 1200px) {
+    .blogModule .image img {
+        max-width: 205px !important;
+    }
+    #column-left + #content .blogModule .image img, #column-right + #content .blogModule .image img {
+        width: 200px !important;
+    }
+    .blogSearch .compact li {
+        height: 190px !important;
+    }
+}
+
+
+@media only screen and (min-width: 740px) and (max-width: 980px) {
+    .blogModule .image img {
+        max-width: 95% !important;
+    }
+    #column-left + #content .blogModule .image img, #column-right + #content .blogModule .image img {
+        width: 94% !important;
+    }
+    .blogModule .title {
+        font-size: 18px !important;
+    }
+    .articleContent {
+        margin-bottom: 30px;
+    }
+    .blogSearch .compact li {
+        float: none !important;
+        width: 100% !important;
+    }
+}
+
+
+@media only screen and (max-width: 740px) {
+    .blogModule .image img {
+        max-width: 94% !important;
+    }
+    .artHorz-4 li {
+        margin: 5px 2% !important;
+        width: 46% !important;
+    }
+    .blogModule .title {
+        font-size: 18px !important;
+    }
+    .replyComment {
+        margin-left: -92px !important;
+    }
+    #commentRespond textarea {
+        width: 95% !important;
+    }
+    .articleContent {
+        margin-bottom: 30px;
+    }
+    .articleContent img {
+        margin-bottom: 10px !important;
+    }
+    .articleBottom ul {
+        width: 100% !important;
+    }
+    .blogSearch .compact li {
+        float: none !important;
+        width: 100% !important;
+        height: auto !important;
+        padding-bottom: 15px !important;
+    }
+    .artHorz-5 li {
+        margin: 10px 4% !important;
+        width: 40% !important;
+    }
+
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 340px) {
+    .blogModule .image img {
+        max-width: 100% !important;
+    }
+    .artHorz-3 li, .artHorz-4 li , .artHorz-5 li {
+        margin: 10px 4% !important;
+        width: 100% !important;
+    }
+    #commentRespond textarea {
+        width: 86% !important;
+    }
+}

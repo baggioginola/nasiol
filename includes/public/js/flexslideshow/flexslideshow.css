@@ -1,0 +1,372 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {
+    margin: 0;
+    padding: 0;
+}
+.flexslider .slides > li { /* Hide the slides before the JS is loaded. Avoids image jumping */
+    display: none;
+    -webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+    width: 100%;
+    display: none;
+}
+.flex-pauseplay span {
+    text-transform: capitalize;
+}
+
+/* Clearfix for the .slides element */
+.slides:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+html[xmlns] .slides {
+    display: block;
+}
+* html .slides {
+    height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+    display: block;
+}
+
+
+
+
+/* FlexSlider Theme
+*********************************/
+.flexslider {
+    margin: 0 0 50px 0;
+    position: relative;
+    min-height: 50px;
+    zoom: 1;
+}
+#column-left .flexslider, #column-right .flexslider {
+    margin-bottom: 25px;
+}
+#full-width-slider .flexslider {
+    margin: 0;
+    height: 100%;
+}
+
+#container .flexslider {
+    border: none;
+}
+#column-left + #content .flexslider, #column-right + #content .flexslider {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+#column-left .flex-control-nav, #column-right .flex-control-nav {
+    bottom: -10px;
+}
+
+.flex-viewport {
+    max-height: 2000px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.loading .flex-viewport {
+}
+.flexslider .slides {
+    zoom: 1;
+    overflow: hidden;
+}
+.carousel li {
+    margin-right: 5px;
+}
+
+
+/* Direction Nav */
+.flex-direction-nav {
+    *height: 0;
+}
+.flex-direction-nav a {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(35, 39, 41, 0.72) !important;
+    margin: -35px 0 0 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    opacity: 0;
+    filter: Alpha(opacity=0);
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.11);
+    -webkit-background-clip: padding-box !important;
+    background-clip: padding-box !important;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+}
+.flex-direction-nav .flex-next {
+    background:url(images/slider-next.png) center no-repeat;
+    right: 0px;
+}
+.flex-direction-nav .flex-next:hover {
+    background-color: #1ab5e0 !important;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transition: rotate(360deg);
+    transform: rotate(360deg);
+}
+.flex-direction-nav .flex-prev {
+    background: url(images/slider-prev.png) center no-repeat;
+    left: 0px;
+}
+.flex-direction-nav .flex-prev:hover {
+    background-color: #1ab5e0 !important;
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transition: rotate(-360deg);
+    transform: rotate(-360deg);
+}
+
+.flexslider:hover .flex-next {
+    opacity: 1;
+    filter: Alpha(opacity=100); /* IE8 and earlier */
+    right: 45px;
+}
+.flexslider:hover .flex-prev {
+    opacity: 1;
+    filter: Alpha(opacity=100); /* IE8 and earlier */
+    left: 45px;
+}
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
+}
+.flex-direction-nav .flex-disabled {
+    opacity: .3!important;
+    filter:alpha(opacity=30);
+    cursor: default;
+}
+
+/* Control Nav */
+.flex-control-nav {
+    width: 99.9%;
+    height: 0;
+    position: absolute;
+    bottom: -13px;
+    text-align: center;
+}
+.flex-control-nav li {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+.flex-control-paging li a {
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 0 7px;
+    text-indent: -99999px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #42494D;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.flex-control-paging li a:hover {
+    background-color: #42494D;
+}
+.flex-control-paging li a.flex-active {
+    background-color: #42494D;
+}
+
+/* Full Width Control Nav */
+#full-width-slider .flex-control-nav {
+    width: 100%;
+    height: 0;
+    bottom: 40px;
+}
+#full-width-slider .flex-control-paging li a {
+    width: 13px;
+    height: 13px;
+    border-color: #FFF;
+}
+#full-width-slider .flex-control-paging li a:hover {
+    background-color: #D60808;
+}
+#full-width-slider .flex-control-paging li a.flex-active {
+    background-color: #D60808;
+}
+
+/* Control Thumbs Nav */
+.flex-control-thumbs {
+    margin: 5px 0 0;
+    position: static;
+    overflow: hidden;
+}
+.flex-control-thumbs li {
+    width: 25%;
+    float: left;
+    margin: 0;
+}
+.flex-control-thumbs img {
+    width: 100%;
+    display: block;
+    opacity: .7;
+    cursor: pointer;
+}
+.flex-control-thumbs img:hover {
+    opacity: 1;
+}
+.flex-control-thumbs .flex-active {
+    opacity: 1;
+    cursor: default;
+}
+
+
+
+
+
+/* Custom
+***********/
+#full-width-slider {
+    clear: both;
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+}
+.flexslider .slides > li:first-child { /* Display the first image before all images are loaded */
+    display: block;
+    -webkit-backface-visibility: visible;
+}
+
+.flexslider ul.slides li {
+    text-align: center !important;
+    position: relative;
+}
+.flexslider li .bigimage {
+    width: 100% !important;
+
+    position: relative;
+    top: 0;
+}
+
+/* Scroll Down button */
+#full-width-slider .scroll-down {
+    position: absolute;
+    opacity: 0;
+    right: 8px;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+    background: url(../../img/scroll-down.png) center no-repeat;
+    background-color: rgba(35, 39, 41, 0.72);
+    cursor: pointer;
+    z-index: 9;
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.11);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+#full-width-slider .scroll-down:hover {
+    background-color: #1ab5e0;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transition: rotate(360deg);
+    transform: rotate(360deg);
+}
+#full-width-slider:hover .scroll-down {
+    opacity: 1;
+    bottom: 45px;
+}
+
+/* Scroll down button target */
+#scroll-down-target {
+    position: absolute;
+    top: -70px;
+    height: 0;
+}
+
+/* Shadow top */
+#full-width-slider .shadow-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 9;
+    -webkit-box-shadow: inset 0px 3px 10px -5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0px 3px 10px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 3px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Shadow bottom */
+#full-width-slider .shadow-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 9;
+    -webkit-box-shadow: inset 0px -3px 10px -5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0px -3px 10px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px -3px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Responsiveness since 1200px (full-width-slider) */
+@media only screen and (min-width: 1200px) {
+    .flexslider li img.slide_img{
+        display: none !important;
+    }
+    .flexslider li .bigimage {
+        display: block !important;
+    }
+}

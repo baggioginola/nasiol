@@ -1,0 +1,187 @@
+/*
+Martha Slidingbox stylesheet
+by Themetorium
+http://themeforest.net/user/Themetorium
+*/
+
+.welcome-message .custom-html-box-content p,
+.welcome-message .custom-youtube-box-content p,
+.welcome-message .custom-fb-box-content p,
+.welcome-message .custom-twitter-box-content p {
+    margin-top: 0;
+}
+
+
+/* LEFT SIDE
+**************/
+
+/* Begin sliding YouTube box */
+.welcome-message .custom-youtube-box {
+    position: fixed;
+    top: 240px;
+    left: -472px;
+    width: 470px;
+    z-index: 9999;
+    line-height: 0px;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+}
+.welcome-message .custom-youtube-box-content {
+    padding: 10px;
+}
+.welcome-message .custom-youtube-box-icon {
+    position: absolute;
+    background-image: url(../image/slidingbox/youtube-box.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 50px;
+    top: 10px;
+    right: -41px;
+    -webkit-border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    -khtml-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.welcome-message .custom-youtube-box:hover .custom-youtube-box-icon {
+    background-color: #cc181e;
+}
+/* End sliding YouTube box */
+
+/* Begin sliding HTML/text box */
+.welcome-message .custom-html-box {
+    position: fixed;
+    top: 304px;
+    left: -302px;
+    width: 300px;
+    max-height: 480px;
+    z-index: 99999;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+}
+.welcome-message .custom-html-box-content {
+    max-height: 440px;
+    overflow: auto;
+    margin: 13px 0 13px 13px;
+    padding-right: 13px;
+}
+.welcome-message .custom-html-box-icon {
+    position: absolute;
+    background-image: url(../image/slidingbox/html-box.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 50px;
+    top: 10px;
+    right: -41px;
+    -webkit-border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    -khtml-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.welcome-message .custom-html-box:hover .custom-html-box-icon {
+    background-color: #63AC3C;
+}
+/* End sliding HTML/text box */
+
+
+/* RIGHT SIDE
+**************/
+
+/* Begin sliding Facebook like box */
+.welcome-message .custom-fb-box {
+    position: fixed;
+    top: 240px;
+    right: -304px;
+    width: 302px;
+    z-index: 9999;
+    line-height: 0px;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+}
+.welcome-message .custom-fb-box-content {
+    padding: 5px;
+}
+.welcome-message .custom-fb-box-icon {
+    position: absolute;
+    background-image: url(../image/slidingbox/fb-box.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 50px;
+    top: 10px;
+    left: -41px;
+    -webkit-border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    -khtml-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.welcome-message .custom-fb-box:hover .custom-fb-box-icon {
+    background-color: #3B5998;
+}
+/* End sliding Facebook like box */
+
+/* Begin sliding Twitter box */
+.welcome-message .custom-twitter-box {
+    position: fixed;
+    top: 304px;
+    right: -304px;
+    width: 302px;
+    z-index: 99999;
+    line-height: 0px;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+}
+.welcome-message .custom-twitter-box-content {
+    padding: 10px;
+}
+.welcome-message .custom-twitter-box-icon {
+    position: absolute;
+    background-image: url(../image/slidingbox/twitter-box.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 50px;
+    top: 10px;
+    left: -41px;
+    -webkit-border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    -khtml-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.welcome-message .custom-twitter-box:hover .custom-twitter-box-icon {
+    background-color: #45afe3;
+}
+/* End sliding Twitter box */
