@@ -58,7 +58,7 @@
                 </div>
             </li>
             <li><a href="http://www.nasiol.com/product-videos">Product Videos</a></li>
-            <li><a href="informacion-nanotecnologia">Information Center</a></li>
+            <li><a href="informacion-nanotecnologia">Informacion</a></li>
             <li><a href="acerca">Acerca</a></li>
             <li><a href="franquicia">Franquicia</a></li>
             <li class=""><a href="contacto">CONTACTO</a>
