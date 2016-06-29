@@ -37,3 +37,7 @@ $app->get('/franquicia', function() use ($app){
 $app->get('/contacto', function() use ($app){
     $app->render('contacto.php');
 });
+
+$app->get('/videos-producto', function() use ($app){
+    $app->render('producto_videos.php');
+});
