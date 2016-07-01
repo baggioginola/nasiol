@@ -2083,6 +2083,7 @@ ul.box-category > li a.active {
     border-top: 9px solid rgba(0, 0, 0, 0);
     border-bottom: 9px solid rgba(0, 0, 0, 0);
     border-left: 9px solid #2cace3;
+    background: #2ec6ff;
 }
 #column-right ul.box-category > li a.active:before {
     content: "";
@@ -4793,4 +4794,6 @@ div#focal {
 .mobile-div {
     display: none;
 }
-	
+.welcome-message img{
+    width: 100%;
+}

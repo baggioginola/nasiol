@@ -41,3 +41,12 @@ $app->get('/contacto', function() use ($app){
 $app->get('/videos-producto', function() use ($app){
     $app->render('producto_videos.php');
 });
+
+$app->get('/proteccion-superficie-carro', function() use ($app){
+    $app->render('producto.php');
+});
+
+$app->get('/proteccion-superficie-carro/:id', function() use ($app){
+    $data = array('id_producto' => 1, 'nombre' => 'Test');
+    $app->render('producto_descripcion.php',array('resultados' => $data));
+});

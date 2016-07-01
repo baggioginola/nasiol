@@ -6,9 +6,9 @@
                     <div class="top-one">
                         <div class="a common-fbox">
                             <div class="heading common-head">&nbsp;
-                                <h2><a href="http://www.nasiol.com/products/car-coating">CAR NANO COATING </a></h2>
+                                <h2><a href="#">CAR NANO COATING </a></h2>
 
-                                <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/car-coating">.Windows
+                                <p><font color="#FFFFFF"><a href="#">Windows
                                             pristine. Paint job flawless<br/>
                                             .Your vehicle’s ‘new look’ will last a long while</a></font></p>
                             </div>
@@ -22,13 +22,13 @@
                     <div class="top-two">
                         <div class="d common-fbox">
                             <div class="heading common-head">
-                                <h2><font color="#FFFFFF"><a href="http://www.nasiol.com/products">RETAIL NANO
+                                <h2><font color="#FFFFFF"><a href="#">RETAIL NANO
                                             PRODUCTS</a></font></h2>
                             </div>
 
                             <div class="e common-sbox">
                                 <div class="f"><font color="#FFFFFF"><a
-                                            href="http://www.nasiol.com/nano-coatings-retail">&nbsp;</a></font></div>
+                                            href="#">&nbsp;</a></font></div>
                             </div>
                         </div>
                     </div>
@@ -36,10 +36,10 @@
                     <div class="top-three">
                         <div class="g common-fbox">
                             <div class="heading common-head">
-                                <h2><font color="#FFFFFF"><a href="http://www.nasiol.com/products/home-coating">HOME
+                                <h2><font color="#FFFFFF"><a href="#">HOME
                                             SURFACE PROTECTION</a></font></h2>
 
-                                <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/home-coating">Let the
+                                <p><font color="#FFFFFF"><a href="#">Let the
                                             kids and pets play. No worries. Nasiol<br/>
                                             protects your home interiors and exteriors.</a></font></p>
                             </div>
@@ -55,10 +55,10 @@
                     <div class="bottom-one">
                         <div class="j common-fbox">
                             <div class="heading common-head">
-                                <h2><font color="#FFFFFF"><a href="http://www.nasiol.com/products/personal-coating">PERSONAL
+                                <h2><font color="#FFFFFF"><a href="#">PERSONAL
                                             GOODS PROTECTION</a></font></h2>
 
-                                <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/personal-coating">Shoes,
+                                <p><font color="#FFFFFF"><a href="#">Shoes,
                                             sportswear and accessories,<br/>
                                             everything you want to use longer,<br/>
                                             made ultra durable by Nasiol.</a></font></p>
@@ -73,14 +73,14 @@
                     <div class="bottom-two">
                         <div class="m common-fbox">
                             <div class="heading common-head">
-                                <h2><font color="#FFFFFF"><a href="http://www.nasiol.com/nano-products-private-label">PRIVATE
+                                <h2><font color="#FFFFFF"><a href="#">PRIVATE
                                             LABEL<br/>
                                             TOLL MANUFACTURING</a></font></h2>
                             </div>
 
                             <div class="n common-sbox">
                                 <div class="o"><font color="#FFFFFF"><a
-                                            href="http://www.nasiol.com/nano-products-private-label">&nbsp;</a></font>
+                                            href="#">&nbsp;</a></font>
                                 </div>
                             </div>
                         </div>
@@ -89,13 +89,13 @@
                     <div class="bottom-three">
                         <div class="p common-fbox">
                             <div class="heading common-head">
-                                <h2><font color="#FFFFFF"><a href="http://www.nasiol.com/industrial-nano-coatings">BULK
+                                <h2><font color="#FFFFFF"><a href="#">BULK
                                             SIZE HYDROPHOBIC COATINGS</a></font></h2>
                             </div>
 
                             <div class="q common-sbox">
                                 <div class="r"><font color="#FFFFFF"><a
-                                            href="http://www.nasiol.com/industrial-nano-coatings">&nbsp;</a></font>
+                                            href="#">&nbsp;</a></font>
                                 </div>
                             </div>
                         </div>
@@ -104,14 +104,14 @@
                     <div class="bottom-four">
                         <div class="s common-fbox">
                             <div class="heading common-head">
-                                <h2><font color="#FFFFFF"><a href="http://www.nasiol.com/industrial-nano-coatings">
+                                <h2><font color="#FFFFFF"><a href="#">
                                             &nbsp;&nbsp;&nbsp;INDUSTRIAL<br/>
                                             NANO COATINGS</a></font></h2>
                             </div>
 
                             <div class="t common-sbox">
                                 <div class="u"><font color="#FFFFFF"><a
-                                            href="http://www.nasiol.com/industrial-nano-coatings">&nbsp;</a></font>
+                                            href="#">&nbsp;</a></font>
                                 </div>
                             </div>
                         </div>
@@ -120,10 +120,10 @@
                     <div class="bottom-five">
                         <div class="v common-fbox">
                             <div class="heading common-head">
-                                <h2><font color="#FFFFFF"><a href="http://www.nasiol.com/products/marine-coating">NANO
+                                <h2><font color="#FFFFFF"><a href="#">NANO
                                             MARINE CARE</a></font></h2>
 
-                                <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/marine-coating">Nanocoating
+                                <p><font color="#FFFFFF"><a href="#">Nanocoating
                                             is a must to protect<br/>
                                             .yachts from the elements<br/>
                                             .Ditch your ineffective wax coats</a></font></p>
@@ -146,9 +146,9 @@
                                 alt="nano coating" img="" src="<?php echo IMAGES; ?>data/head-01.jpg"/></a></font></div>
 
                 <div class="headingsectiondiv"><font color="#FFFFFF"><a
-                            href="http://www.nasiol.com/products/car-coating">AUTO NANO COATINGS</a> </font>
+                            href="#">AUTO NANO COATINGS</a> </font>
 
-                    <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/car-coating">.Windows pristine.
+                    <p><font color="#FFFFFF"><a href="#">.Windows pristine.
                                 Paint job flawless<br/>
                                 .Your vehicle’s ‘new look’ will last a long while</a></font></p>
                     <font color="#FFFFFF"> </font></div>
@@ -159,7 +159,7 @@
                                                                     src="<?php echo IMAGES; ?>data/head-02.jpg"/></font>
                 </div>
 
-                <div class="headingsectiondiv"><font color="#FFFFFF"><a href="http://www.nasiol.com/products">RETAIL
+                <div class="headingsectiondiv"><font color="#FFFFFF"><a href="#">RETAIL
                             NANO PRODUCTS</a></font></div>
             </div>
 
@@ -169,9 +169,9 @@
                 </div>
 
                 <div class="headingsectiondiv"><font color="#FFFFFF"><a
-                            href="http://www.nasiol.com/products/home-coating">HOME SURFACE PROTECTION</a> </font>
+                            href="#">HOME SURFACE PROTECTION</a> </font>
 
-                    <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/home-coating">Let the kids and pets
+                    <p><font color="#FFFFFF"><a href="#">Let the kids and pets
                                 play. No worries. Nasiol<br/>
                                 protects your home interiors and exteriors.</a></font></p>
                     <font color="#FFFFFF"> </font></div>
@@ -183,9 +183,9 @@
                 </div>
 
                 <div class="headingsectiondiv"><font color="#FFFFFF"><a
-                            href="http://www.nasiol.com/products/personal-coating">PERSONAL GOODS PROTECTION</a> </font>
+                            href="#">PERSONAL GOODS PROTECTION</a> </font>
 
-                    <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/personal-coating">Shoes, sportswear
+                    <p><font color="#FFFFFF"><a href="#">Shoes, sportswear
                                 and accessories,<br/>
                                 everything you want to use longer,<br/>
                                 made ultra durable by Nasiol.</a></font></p>
@@ -198,7 +198,7 @@
                 </div>
 
                 <div class="headingsectiondiv"><font color="#FFFFFF"><a
-                            href="http://www.nasiol.com/nano-products-private-label">PRIVATE LABEL<br/>
+                            href="#">PRIVATE LABEL<br/>
                             TOLL MANUFACTURING</a></font></div>
             </div>
 
@@ -208,7 +208,7 @@
                                                                     width="24"/></font></div>
 
                 <div class="headingsectiondiv"><font color="#FFFFFF"><a
-                            href="http://www.nasiol.com/industrial-nano-coatings">BULK SIZE HYDROPHOBIC
+                            href="#">BULK SIZE HYDROPHOBIC
                             COATINGS</a></font></div>
             </div>
 
@@ -218,7 +218,7 @@
                 </div>
 
                 <div class="headingsectiondiv"><font color="#FFFFFF"><a
-                            href="http://www.nasiol.com/industrial-nano-coatings">INDUSTRIAL<br/>
+                            href="#">INDUSTRIAL<br/>
                             NANO COATINGS</a></font></div>
             </div>
 
@@ -228,9 +228,9 @@
                 </div>
 
                 <div class="headingsectiondiv"><font color="#FFFFFF"><a
-                            href="http://www.nasiol.com/products/marine-coating">NANO MARINE CARE</a> </font>
+                            href="#">NANO MARINE CARE</a> </font>
 
-                    <p><font color="#FFFFFF"><a href="http://www.nasiol.com/products/marine-coating">Nanocoating is a
+                    <p><font color="#FFFFFF"><a href="#">Nanocoating is a
                                 must to protect<br/>
                                 .yachts from the elements<br/>
                                 .Ditch your ineffective wax coats</a></font></p>
@@ -264,13 +264,13 @@
                     <div class="box-heading">NEWS</div>
 
                     <ul>
-                        <li style="font-size:14px;"><a href="http://nasiol.com/news"><span style="font-size:14px;">&gt;&gt;CONFERENCE</span></a><br/>
+                        <li style="font-size:14px;"><a href="#"><span style="font-size:14px;">&gt;&gt;CONFERENCE</span></a><br/>
                             Kocaeli Nanotechnology days 2011 held on 7-8 May 2011 in Prof. Dr. Baki Komsuoğlu congress..
                         </li>
-                        <li style="font-size:14px;"><a href="http://nasiol.com/news"><span style="font-size:14px;">&gt;&gt; CONTRIBUTION TO SCIENCE ARTICLE</span></a><br/>
+                        <li style="font-size:14px;"><a href="#"><span style="font-size:14px;">&gt;&gt; CONTRIBUTION TO SCIENCE ARTICLE</span></a><br/>
                             Micro Manufacturing magazine subjected on nanofibers production methods with the article..
                         </li>
-                        <li style="font-size:14px;"><a href="http://nasiol.com/news"><span style="font-size:14px;">&gt;&gt; EXCLUSIVE DISTRIBUTING</span></a><br/>
+                        <li style="font-size:14px;"><a href="#"><span style="font-size:14px;">&gt;&gt; EXCLUSIVE DISTRIBUTING</span></a><br/>
                             Protective care is Nasiol's new exclusive distributor for the countries Qatar, UAE,
                             Bahrain..
                         </li>
@@ -303,14 +303,14 @@
                         <div class="in-images">
                             <div class="img1">
                                 <div class="textbox1">
-                                    <h2><a href="http://www.nasiol.com/industrial-nano-coatings"><span>Wood</span><br/>
+                                    <h2><a href="#"><span>Wood</span><br/>
                                             Waterproof Sprays</a></h2>
                                 </div>
                             </div>
 
                             <div class="img1 two-img">
                                 <div class="textbox1">
-                                    <h2><a href="http://www.nasiol.com/industrial-nano-coatings"><span>Plastic &amp; Metal</span><br/>
+                                    <h2><a href="#"><span>Plastic &amp; Metal</span><br/>
                                             HYDROPHOBIC Coatings</a></h2>
                                 </div>
                             </div>
@@ -318,7 +318,7 @@
                             <div class="img1 three-img">
                                 <div class="textbox1">
                                     <h2>
-                                        <a href="http://www.nasiol.com/industrial-nano-coatings"><span>Textile</span><br/>
+                                        <a href="#"><span>Textile</span><br/>
                                             WATERPROOFING LIQUIDS</a></h2>
                                 </div>
                             </div>
@@ -326,14 +326,14 @@
                             <div class="img1 four-img">
                                 <div class="textbox1">
                                     <h2>
-                                        <a href="http://www.nasiol.com/industrial-nano-coatings"><span>MINERAL SURFACE</span><br/>
+                                        <a href="#"><span>MINERAL SURFACE</span><br/>
                                             Nano Coatings</a></h2>
                                 </div>
                             </div>
 
                             <div class="img1 five-img">
                                 <div class="textbox1">
-                                    <h2><a href="http://www.nasiol.com/industrial-nano-coatings"><span>Super<br/>
+                                    <h2><a href="#"><span>Super<br/>
 Hydrophobıc</span><br/>
                                             Nano Coatings</a></h2>
                                 </div>
@@ -341,7 +341,7 @@ Hydrophobıc</span><br/>
 
                             <div class="img1 six-img">
                                 <div class="textbox1">
-                                    <h2><a href="http://www.nasiol.com/industrial-nano-coatings"><span>Glass &amp; Ceramic</span><br/>
+                                    <h2><a href="#"><span>Glass &amp; Ceramic</span><br/>
                                             Water REPELLENT COATINGS</a></h2>
                                 </div>
                             </div>

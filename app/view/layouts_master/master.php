@@ -68,11 +68,11 @@ if($resourceUri == '/') {
 <script type="text/javascript" src="<?php echo JS; ?>common.js"></script>
 
 <script type="text/javascript" src="<?php echo JS; ?>custom.js"></script>
-<script type="text/JavaScript" src="<?php echo JS; ?>cloud-zoom.1.0.2.js"></script>
-<script type="text/JavaScript" src="<?php echo JS; ?>slidingbox.js"></script>
+<script type="text/javaScript" src="<?php echo JS; ?>cloud-zoom.1.0.2.js"></script>
+<script type="text/javaScript" src="<?php echo JS; ?>slidingbox.js"></script>
 <script type="text/javascript" src="<?php echo JS; ?>tooltip/jquery.qtip.js"></script>
 <script type="text/javascript" src="<?php echo JS; ?>tooltip/tooltip.js"></script>
-<script type="text/JavaScript" src="<?php echo JS; ?>jquery.nivo.slider.pack.js"></script>
+<script type="text/javaScript" src="<?php echo JS; ?>jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="<?php echo JS; ?>flexslideshow/jquery.flexslider-min.js"></script>
 
 </body>

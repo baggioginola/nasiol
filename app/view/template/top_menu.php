@@ -1,35 +1,32 @@
 <div id="header-area">
     <div id="header">
-
         <div id="header-content">
+            <div id="logo"><a href="./"><img src="<?php echo IMAGES; ?>data/Nasiol-Nano-coatings-Logo.png" alt="ARTEKYA LTD"/></a></div>
 
-            <!-- Begin logo -->
-            <div id="logo"><a href="./"><img src="<?php echo IMAGES; ?>data/Nasiol-Nano-coatings-Logo.png"
-                                             alt="ARTEKYA LTD"/></a></div>
-
-            <!-- End logo -->
-
-            <!-- Begin social icons //-->
             <ul class="social-icons">
-                <li><a title="Facebook" target="_blank" rel="nofollow" href="https://www.facebook.com/nasiolove"><img
-                            src="<?php echo IMAGES; ?>social/facebook.png" alt="facebook"></a></li>
-                <li><a title="Youtube" target="_blank" rel="nofollow" href="https://www.youtube.com/user/aslamacia"><img
-                            src="<?php echo IMAGES; ?>social/youtube.png" alt="youtube"></a></li>
-                <li><a title="Twitter" target="_blank" rel="nofollow" href="https://twitter.com/nasiolove"><img
-                            src="<?php echo IMAGES; ?>social/twitter.png" alt="twitter"></a></li>
+                <li>
+                    <a title="Facebook" target="_blank" rel="nofollow" href="https://www.facebook.com/nasiolove">
+                        <img src="<?php echo IMAGES; ?>social/facebook.png" alt="facebook">
+                    </a>
+                </li>
+                <li>
+                    <a title="Youtube" target="_blank" rel="nofollow" href="https://www.youtube.com/user/aslamacia">
+                        <img src="<?php echo IMAGES; ?>social/youtube.png" alt="youtube">
+                    </a>
+                </li>
+                <li>
+                    <a title="Twitter" target="_blank" rel="nofollow" href="https://twitter.com/nasiolove">
+                        <img src="<?php echo IMAGES; ?>social/twitter.png" alt="twitter">
+                    </a>
+                </li>
             </ul>
-            <!-- End social icons //-->
 
-
-            <!-- Begin search -->
             <div id="search">
                 <div class="button-search"></div>
                 <input type="text" name="search" placeholder="Search" value=""/>
             </div>
             <div class="top_banner">
             </div>
-            <!-- End search -->
-
         </div>
     </div>
 
@@ -40,21 +37,16 @@
             </li>
             <!-- End menu home link -->
             <li>
-            <li><a href="#">nano coating products</a>
-
+            <li>
+                <a href="#">nano coating products</a>
                 <div>
                     <div class="sub-menu-content">
                         <ul>
-                            <li><a href="http://www.nasiol.com/products/car-coating ">
-                                    CAR SURFACE PROTECTION </a></li>
-                            <li><a href="http://www.nasiol.com/products/home-coating ">
-                                    HOME SURFACE PROTECTION </a></li>
-                            <li><a href="http://www.nasiol.com/products/marine-coating ">
-                                    MARINE SURFACE PROTECTION </a></li>
-                            <li><a href="http://www.nasiol.com/products/personal-coating ">
-                                    PERSONAL SURFACE PROTECTION </a></li>
-                            <li><a href=" http://www.nasiol.com/industrial-nano-coatings">
-                                    BULK SIZE PRODUCTS </a></li>
+                            <li><a href="./proteccion-superficie-carro">PROTECCION SUPERFICIE DEL CARRO</a></li>
+                            <li><a href="">HOME SURFACE PROTECTION </a></li>
+                            <li><a href="">MARINE SURFACE PROTECTION </a></li>
+                            <li><a href="">PERSONAL SURFACE PROTECTION </a></li>
+                            <li><a href="">BULK SIZE PRODUCTS </a></li>
                         </ul>
                     </div>
                 </div>
