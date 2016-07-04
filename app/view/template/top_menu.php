@@ -1,7 +1,7 @@
 <div id="header-area">
     <div id="header">
         <div id="header-content">
-            <div id="logo"><a href="./"><img src="<?php echo IMAGES; ?>data/Nasiol-Nano-coatings-Logo.png" alt="ARTEKYA LTD"/></a></div>
+            <div id="logo"><a href="<?php echo DOMAIN; ?>"><img src="<?php echo IMAGES; ?>data/Nasiol-Nano-coatings-Logo.png" alt="ARTEKYA LTD"/></a></div>
 
             <ul class="social-icons">
                 <li>
@@ -33,7 +33,7 @@
     <div id="menu" class="default-menu">
         <ul>
             <li>
-                <a class="menu-home-link" href="./"><img alt="Nasiol" src="<?php echo IMAGES; ?>home.png" alt="Nasiol"/></a>
+                <a class="menu-home-link" href="<?php echo DOMAIN; ?>"><img alt="Nasiol" src="<?php echo IMAGES; ?>home.png" alt="Nasiol"/></a>
             </li>
             <!-- End menu home link -->
             <li>
@@ -42,7 +42,7 @@
                 <div>
                     <div class="sub-menu-content">
                         <ul>
-                            <li><a href="./proteccion-superficie-carro">PROTECCION SUPERFICIE DEL CARRO</a></li>
+                            <li><a href="<?php echo DOMAIN; ?>proteccion-superficie-carro">PROTECCION SUPERFICIE DEL CARRO</a></li>
                             <li><a href="">HOME SURFACE PROTECTION </a></li>
                             <li><a href="">MARINE SURFACE PROTECTION </a></li>
                             <li><a href="">PERSONAL SURFACE PROTECTION </a></li>

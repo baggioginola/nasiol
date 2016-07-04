@@ -43,10 +43,10 @@ $app->get('/videos-producto', function() use ($app){
 });
 
 $app->get('/proteccion-superficie-carro', function() use ($app){
-    $app->render('producto.php');
+    $app->render('categoria.php');
 });
 
 $app->get('/proteccion-superficie-carro/:id', function() use ($app){
     $data = array('id_producto' => 1, 'nombre' => 'Test');
-    $app->render('producto_descripcion.php',array('resultados' => $data));
+    $app->render('producto.php',array('resultados' => $data));
 });
