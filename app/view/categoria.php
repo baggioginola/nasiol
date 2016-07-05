@@ -20,14 +20,14 @@
                     <div>
                         <div class="boxgrid">
                             <div class="image">
-                                <a href="<?php echo DOMAIN; ?>proteccion-superficie-carro/producto_descripcion">
+                                <a href="<?php echo DOMAIN; ?>proteccion-superficie-carro/producto">
                                     <img src="<?php echo IMAGES; ?>proteccion-superficie-carro/car-detailing-kit-190x190.jpg" alt="CAR DETAILING KIT"/>
                                 </a>
                             </div>
                             <div class="box-product-info">
                                 <div class="thumbnail-buttons">
                                     <div class="more">
-                                        <a href="<?php echo DOMAIN; ?>proteccion-superficie-carro/producto_descripcion" title="View More"></a>
+                                        <a href="<?php echo DOMAIN; ?>proteccion-superficie-carro/producto" title="View More"></a>
                                     </div>
 
                                 </div>
@@ -37,7 +37,7 @@
                         <div class="boxgrid-bottom">
                             <div class="arrow-box"></div>
                             <div class="name">
-                                <a href="<?php echo DOMAIN; ?>proteccion-superficie-carro/producto_descripcion">CARDETAILING KIT EXTERIOR AND INTERIOR FULL CAR CARE</a>
+                                <a href="<?php echo DOMAIN; ?>proteccion-superficie-carro/producto">CARDETAILING KIT EXTERIOR AND INTERIOR FULL CAR CARE</a>
                             </div>
                             <div class="price"></div>
 

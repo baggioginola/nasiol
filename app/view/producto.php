@@ -22,23 +22,24 @@
         <div class="product-info">
             <div  id="icoindi" >
                 <div class="bannericon">
-                    <div class="bannericon1" style="font-size: 13px; line-height: 20.8px;"><img src="http://www.nasiol.com/image/data/icon/chemical-resistance.png" />Chemical&nbsp;<br />
+                    <div class="bannericon1" style="font-size: 13px; line-height: 20.8px;">
+                        <img src="<?php echo  IMAGES; ?>proteccion-superficie-carro/glasshield/chemical-resistance.png" />Chemical&nbsp;<br />
                         <span class="icontext">Resistance</span></div>
 
-                    <div class="bannericon2" style="font-size: 13px; line-height: 20.8px;"><img src="http://www.nasiol.com/image/data/product icons/googlide_0002_Katman-61.png" style="width: 61px; height: 70px;" /><span class="icontext">Safe<br />
+                    <div class="bannericon2" style="font-size: 13px; line-height: 20.8px;"><img src="<?php echo  IMAGES; ?>proteccion-superficie-carro/glasshield/googlide_0002_Katman-61.png" style="width: 61px; height: 70px;" /><span class="icontext">Safe<br />
 Vision</span></div>
 
-                    <div class="bannericon3" style="font-size: 13px; line-height: 20.8px;"><img src="http://www.nasiol.com/image/data/product icons/perwear_0000_Vektör-Akıllı-Nesne.png" style="width: 60px; height: 70px;" /><span class="icontext">Easy<br />
+                    <div class="bannericon3" style="font-size: 13px; line-height: 20.8px;"><img src="<?php echo  IMAGES; ?>proteccion-superficie-carro/glasshield/perwear_0000_Vektör-Akıllı-Nesne.png" style="width: 60px; height: 70px;" /><span class="icontext">Easy<br />
 Clean</span></div>
 
-                    <div class="bannericon4" style="font-size: 13px; line-height: 20.8px;"><img src="http://www.nasiol.com/image/data/icon/hydrofobic.png" />High<br />
+                    <div class="bannericon4" style="font-size: 13px; line-height: 20.8px;"><img src="<?php echo  IMAGES; ?>proteccion-superficie-carro/glasshield/hydrofobic.png" />High<br />
                         <span class="icontext">Hydrophobic</span></div>
 
                     <div class="bannericon4" style="font-size: 13px; line-height: 20.8px;">&nbsp;</div>
                 </div>
             </div>
             <div class="bannerinfo">
-                <p><img alt="" src="http://www.nasiol.com/image/data/productbanners/nasiol-glasshield.jpg" style="width: 925px; height: 345px;" />​</p>
+                <p><img alt="" src="<?php echo  IMAGES; ?>proteccion-superficie-carro/glasshield/nasiol-glasshield.jpg" style="width: 925px; height: 345px;" />​</p>
             </div>
 
             <div id="conta">
