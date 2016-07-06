@@ -17,32 +17,32 @@ $app->group('/categorias', function () use($app) {
     });
 
     $app->post('/add', function() use($app){
-        require_once __CONTROLLER__ . 'CUserController.class.inc.php';
-        if(!$result = UserController::singleton()->add()) {
+        require_once __CONTROLLER__ . 'CCategoriesController.class.inc.php';
+        if(!$result = Categories::singleton()->add()) {
             echo 'Fail';
         }
         echo $result;
     });
 
     $app->post('/getById', function() use($app){
-        require_once __CONTROLLER__ . 'CUserController.class.inc.php';
-        if(!$result = UserController::singleton()->getById()) {
+        require_once __CONTROLLER__ . 'CCategoriesController.class.inc.php';
+        if(!$result = Categories::singleton()->getById()) {
             echo 'Fail';
         }
         echo $result;
     });
 
     $app->post('/edit', function() use($app){
-        require_once __CONTROLLER__ . 'CUserController.class.inc.php';
-        if(!$result = UserController::singleton()->edit()) {
+        require_once __CONTROLLER__ . 'CCategoriesController.class.inc.php';
+        if(!$result = Categories::singleton()->edit()) {
             echo 'Fail';
         }
         echo $result;
     });
 
     $app->post('/delete', function() use($app){
-        require_once __CONTROLLER__ . 'CUserController.class.inc.php';
-        if(!$result = UserController::singleton()->delete()) {
+        require_once __CONTROLLER__ . 'CCategoriesController.class.inc.php';
+        if(!$result = Categories::singleton()->delete()) {
             echo 'Fail';
         }
         echo $result;

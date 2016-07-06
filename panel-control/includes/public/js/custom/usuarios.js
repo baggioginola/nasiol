@@ -74,7 +74,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 table.ajax.reload();
-                submit_response(form, data);
+                submit_response(form, data, 'usuarios/add');
             }
         });
         return false;

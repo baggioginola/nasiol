@@ -1,6 +1,4 @@
 <script type="text/javascript" src="<?php echo JS; ?>custom/categorias.js"></script>
-<script type="text/javascript" src="<?php echo JS; ?>md5.js"></script>
-
 
 <h2 class="sub-header">Categorias</h2>
 <div class="panel panel-default">
@@ -19,7 +17,7 @@
                     <button type="button" class="btn btn-primary" id="reset_button">Limpiar</button>
                 </div>
             </div>
-            <input type="hidden" id="submit_type" value="usuarios/add" />
+            <input type="hidden" id="submit_type" value="categorias/add" />
             <input type="hidden" id="submit_pw" />
             <input type="hidden" id="submit_id" />
         </form>
@@ -31,8 +29,6 @@
             <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>E-mail</th>
                 <th></th>
                 <th></th>
             </tr>

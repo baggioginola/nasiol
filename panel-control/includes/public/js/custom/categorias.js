@@ -66,7 +66,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 table.ajax.reload();
-                submit_response(form, data);
+                submit_response(form, data, 'categorias/add');
             }
         });
         return false;
