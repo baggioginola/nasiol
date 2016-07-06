@@ -2,6 +2,14 @@
  * Created by mario.cuevas on 5/12/2016.
  */
 $(document).ready(function () {
+
+    $('#reset_button').click(function () {
+        $('#form_global').trigger("reset");
+        $('#submit_type').val('categorias/add');
+        $('#submit_id').val('');
+        return false;
+    });
+
     var url = 'categorias/getAll';
     var columns = [{data: 'nombre'}];
 
@@ -10,9 +18,9 @@ $(document).ready(function () {
     $('#datatable tbody').on('click', '#btn_edit', function () {
 
         $("#form_alert").slideUp();
-        var id = table.row($(this).parents('tr')).data().id_categoria;
+        var id = table.row($(this).parents('tr')).data().id;
 
-        var data = {id_categoria: id};
+        var data = {id: id};
         var url = 'categorias/getById';
 
         $('#submit_type').val('categorias/edit');
@@ -24,16 +32,16 @@ $(document).ready(function () {
                     $("select[name=" + key + "]").val(val);
                 });
             }
-            $('#submit_id').val(response.id_categoria);
+            $('#submit_id').val(response.id);
         }, 'json');
         return false;
     });
 
     $('#datatable tbody').on('click', '#btn_delete', function () {
-        var id = table.row($(this).parents('tr')).data().id_categoria;
+        var id = table.row($(this).parents('tr')).data().id;
         bootbox.confirm("Eliminar elemento?", function (result) {
             if (result == true) {
-                var data = {id_categoria: id, active: 0};
+                var data = {id: id, active: 0};
                 var url = 'categorias/delete';
 
                 $.post(url, data, function (response, status) {
@@ -55,8 +63,8 @@ $(document).ready(function () {
         var data = $(this).serialize();
         var type = $('#submit_type').val();
         if (type == 'categorias/edit') {
-            var id_categoria = $('#submit_id').val();
-            data = data + '&' + $.param({'id_categoria': id_categoria});
+            var id = $('#submit_id').val();
+            data = data + '&' + $.param({'id': id});
         }
         $.ajax({
             url: type,

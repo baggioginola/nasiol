@@ -30,7 +30,7 @@ class UserModel extends Database
         }
         $result_array = array();
 
-        $query = "SELECT id_usuario,nombre,apellidos,email FROM " . self::$table . " WHERE active = true";
+        $query = "SELECT id,nombre,apellidos,email FROM " . self::$table . " WHERE active = true";
 
         if (!$result = $this->query($query)) {
             return false;
@@ -43,9 +43,9 @@ class UserModel extends Database
         return $result_array;
     }
 
-    public function getById($id_usuario = '')
+    public function getById($id = '')
     {
-        if (empty($id_usuario)) {
+        if (empty($id)) {
             return false;
         }
 
@@ -55,7 +55,7 @@ class UserModel extends Database
 
         $result_array = array();
 
-        $query = "SELECT id_usuario,nombre,apellidos,email,password,nivel,password FROM " . self::$table . " WHERE id_usuario = '" . $id_usuario . "' ";
+        $query = "SELECT id,nombre,apellidos,email,password,nivel,password FROM " . self::$table . " WHERE id = '" . $id . "' ";
 
         if (!$result = $this->query($query)) {
             return false;
@@ -99,9 +99,9 @@ class UserModel extends Database
      * @param array $data
      * @return bool|int|string
      */
-    public function edit($data = array(), $id_usuario = '')
+    public function edit($data = array(), $id = '')
     {
-        if (empty($data) || empty($id_usuario)) {
+        if (empty($data) || empty($id)) {
             return false;
         }
 
@@ -109,7 +109,7 @@ class UserModel extends Database
             return false;
         }
 
-        if (!$result = $this->update($data, $id_usuario, self::$table)) {
+        if (!$result = $this->update($data, $id, self::$table)) {
             return false;
         }
 

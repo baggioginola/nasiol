@@ -30,7 +30,7 @@ class CategoriesModel extends Database
         }
         $result_array = array();
 
-        $query = "SELECT id_categoria,nombre FROM " . self::$table . " WHERE active = true";
+        $query = "SELECT id,nombre FROM " . self::$table . " WHERE active = true";
 
         $log[] = $query;
 
@@ -72,9 +72,9 @@ class CategoriesModel extends Database
         return true;
     }
 
-    public function getById($id_categoria = '')
+    public function getById($id = '')
     {
-        if (empty($id_categoria)) {
+        if (empty($id)) {
             return false;
         }
 
@@ -84,7 +84,7 @@ class CategoriesModel extends Database
 
         $result_array = array();
 
-        $query = "SELECT id_categoria,nombre FROM " . self::$table . " WHERE id_categoria = '" . $id_categoria . "' ";
+        $query = "SELECT id,nombre FROM " . self::$table . " WHERE id = '" . $id . "' ";
 
         if (!$result = $this->query($query)) {
             return false;
@@ -97,5 +97,28 @@ class CategoriesModel extends Database
         }
 
         return $result_array;
+    }
+
+    /**
+     * @param array $data
+     * @return bool|int|string
+     */
+    public function edit($data = array(), $id = '')
+    {
+        if (empty($data) || empty($id)) {
+            return false;
+        }
+
+        if (!$this->connect()) {
+            return false;
+        }
+
+        if (!$result = $this->update($data, $id, self::$table)) {
+            return false;
+        }
+
+        $this->close_connection();
+
+        return $result;
     }
 }

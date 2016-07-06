@@ -16,7 +16,7 @@ class Categories extends BaseController
     private $parameters = array();
 
     private $validParameters = array(
-        'id_categoria' => TYPE_INT,
+        'id' => TYPE_INT,
         'nombre' => TYPE_ALPHA,
         'active' => TYPE_INT,
         'imagenes' => TYPE_ALPHA
@@ -58,9 +58,49 @@ class Categories extends BaseController
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        $result = CategoriesModel::singleton()->getById($this->parameters['id_categoria']);
+        $result = CategoriesModel::singleton()->getById($this->parameters['id']);
 
         return json_encode($result);
+    }
+
+    /**
+     * @return string
+     */
+    public function edit()
+    {
+        if (!$this->_setParameters()) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        $id = $this->parameters['id'];
+
+        unset($this->parameters['id']);
+
+        if (!CategoriesModel::singleton()->edit($this->parameters, $id)) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        return json_encode($this->getResponse());
+    }
+
+    /**
+     * @return string
+     */
+    public function delete()
+    {
+        if (!$this->_setParameters()) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        $id = $this->parameters['id'];
+
+        unset($this->parameters['id']);
+
+        if (!$user_id = CategoriesModel::singleton()->edit($this->parameters, $id)) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        return json_encode($this->getResponse());
     }
 
     /**

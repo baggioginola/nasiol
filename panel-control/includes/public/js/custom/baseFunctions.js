@@ -1,15 +1,6 @@
 /**
  * Created by mario.cuevas on 6/16/2016.
  */
-$(document).ready(function () {
-    $('#reset_button').click(function () {
-        $('#form_global').trigger("reset");
-        $('#submit_type').val('usuarios/add');
-        $('#submit_id').val('');
-        return false;
-    });
-});
-
 /**
  *
  * @param form

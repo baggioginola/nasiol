@@ -38,9 +38,9 @@ class Database
         return self::query($sql);
     }
 
-    protected function update($data = array(), $id_usuario = '', $table = '')
+    protected function update($data = array(), $id = '', $table = '')
     {
-        if (empty($data) || empty($table) || empty($id_usuario)) {
+        if (empty($data) || empty($table) || empty($id)) {
             return false;
         }
 
@@ -50,7 +50,7 @@ class Database
             return false;
         }
 
-        $sql = 'UPDATE ' . $table . ' SET ' . $updateString . ' WHERE id_usuario = "' . $id_usuario . '" ;';
+        $sql = 'UPDATE ' . $table . ' SET ' . $updateString . ' WHERE id = "' . $id . '" ;';
 
         return self::query($sql);
     }

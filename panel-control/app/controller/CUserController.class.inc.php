@@ -5,10 +5,9 @@
  * Date: 5/12/2016
  * Time: 8:54 AM
  */
-require_once __CONTROLLER__ . 'CChatUserController.class.inc.php';
 require_once __CONTROLLER__ . 'CBaseController.class.inc.php';
 require_once __MODEL__ . 'CUserModel.class.inc.php';
-define('PATH_MOVISTAR_UY_LOGS', 'F:/Movistar_Logs/');
+
 class UserController extends BaseController
 {
     private static $object = null;
@@ -18,7 +17,7 @@ class UserController extends BaseController
     private $log = array();
 
     private $validParameters = array(
-        'id_usuario' => TYPE_INT,
+        'id' => TYPE_INT,
         'nombre' => TYPE_ALPHA,
         'apellidos' => TYPE_ALPHA,
         'email' => TYPE_ALPHA,
@@ -57,7 +56,7 @@ class UserController extends BaseController
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        $result = UserModel::singleton()->getById($this->parameters['id_usuario']);
+        $result = UserModel::singleton()->getById($this->parameters['id']);
 
         return json_encode($result);
     }
@@ -87,15 +86,11 @@ class UserController extends BaseController
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        $id_usuario = $this->parameters['id_usuario'];
+        $id = $this->parameters['id'];
 
-        unset($this->parameters['id_usuario']);
+        unset($this->parameters['id']);
 
-        if (!$data = UserModel::singleton()->getById($id_usuario)) {
-            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
-        }
-
-        if (!UserModel::singleton()->edit($this->parameters, $id_usuario)) {
+        if (!UserModel::singleton()->edit($this->parameters, $id)) {
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
@@ -111,11 +106,11 @@ class UserController extends BaseController
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        $id_usuario = $this->parameters['id_usuario'];
+        $id = $this->parameters['id'];
 
-        unset($this->parameters['id_usuario']);
+        unset($this->parameters['id']);
 
-        if (!$user_id = UserModel::singleton()->edit($this->parameters, $id_usuario)) {
+        if (!$user_id = UserModel::singleton()->edit($this->parameters, $id)) {
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 

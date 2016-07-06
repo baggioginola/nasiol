@@ -2,6 +2,14 @@
  * Created by mario.cuevas on 5/12/2016.
  */
 $(document).ready(function () {
+
+    $('#reset_button').click(function () {
+        $('#form_global').trigger("reset");
+        $('#submit_type').val('usuarios/add');
+        $('#submit_id').val('');
+        return false;
+    });
+
     var url = 'usuarios/getAll';
     var columns = [{data: 'nombre'}, {data: 'apellidos'}, {data: 'email'}];
 
@@ -9,9 +17,9 @@ $(document).ready(function () {
 
     $('#datatable tbody').on('click', '#btn_edit', function () {
 
-        var id = table.row($(this).parents('tr')).data().id_usuario;
+        var id = table.row($(this).parents('tr')).data().id;
 
-        var data = {id_usuario: id};
+        var data = {id: id};
         var url = 'usuarios/getById';
 
         $('#submit_type').val('usuarios/edit');
@@ -26,23 +34,22 @@ $(document).ready(function () {
             }
             $('#id_password').val(response.password);
             $('#submit_pw').val(response.password);
-            $('#submit_id').val(response.id_usuario);
+            $('#submit_id').val(response.id);
         }, 'json');
         return false;
     });
 
     $('#datatable tbody').on('click', '#btn_delete', function () {
-        var id = table.row($(this).parents('tr')).data().id_usuario;
+        var id = table.row($(this).parents('tr')).data().id;
         bootbox.confirm("Eliminar elemento?", function (result) {
             if (result == true) {
-                var data = {id_usuario: id, active: 0};
+                var data = {id: id, active: 0};
                 var url = 'usuarios/delete';
                 $.post(url, data, function (response, status) {
                     if (status == 'success') {
                         bootbox.alert(response.message);
                         table.ajax.reload();
                     }
-
                 }, 'json');
             }
         });
@@ -62,8 +69,8 @@ $(document).ready(function () {
         var data = $(this).serialize() + '&' + $.param({'password': pw});
         var type = $('#submit_type').val();
         if (type == 'usuarios/edit') {
-            var id_usuario = $('#submit_id').val();
-            data = data + '&' + $.param({'id_usuario': id_usuario});
+            var id = $('#submit_id').val();
+            data = data + '&' + $.param({'id': id});
         }
 
         $.ajax({

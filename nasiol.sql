@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS `nasiol`;
+
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`nasiol` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `nasiol`;
@@ -8,7 +9,7 @@ USE `nasiol`;
 DROP TABLE IF EXISTS `usuario`;
 
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(250) NOT NULL,
   `apellidos` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
@@ -17,7 +18,7 @@ CREATE TABLE `usuario` (
   `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `nivel` int(2),
   `active` boolean DEFAULT TRUE,
-  PRIMARY KEY (`id_usuario`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `usuario`(`nombre`,`apellidos`,`email`,`password`,`nivel`) 
@@ -26,28 +27,36 @@ values('Mario', 'Cuevas', 'mario.cuevas@gameloft.com', MD5('n@5i0112345'),0);
 DROP TABLE IF EXISTS `categoria`;
 
 CREATE TABLE `categoria` (
-`id_categoria` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL AUTO_INCREMENT,
 `nombre` varchar(500) NOT NULL,
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 `active` boolean DEFAULT TRUE,
 `imagenes` TEXT,
-PRIMARY KEY(`id_categoria`)
+PRIMARY KEY(`id`)
 ) ENGINE= InnoDB DEFAULT CHARSET = latin1;
 
 DROP TABLE IF EXISTS `producto`;
 
 CREATE TABLE `producto` (
-`id_producto` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL AUTO_INCREMENT,
 `nombre` varchar(500) NOT NULL,
 `id_categoria` int(11) NOT NULL,
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 `imagenes` TEXT,
 `active` boolean DEFAULT TRUE,
-PRIMARY KEY(`id_producto`),
-KEY `id_categoria` (`id_categoria`),
-  CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`)
+PRIMARY KEY(`id`),
+  CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id`)
 ) ENGINE= InnoDB DEFAULT CHARSET = latin1;
 
-DROP 
+DROP TABLE IF EXISTS `logs`;
+
+CREATE TABLE `logs` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+`service` varchar(250),
+`info` TEXT,
+`expiration_date` TIMESTAMP,
+PRIMARY KEY(`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
