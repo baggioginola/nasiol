@@ -54,13 +54,11 @@ $(document).ready(function ()
             if (result == true) {
                 var data = {id: id, active: 0};
                 var url = 'categorias/delete';
-
                 $.post(url, data, function (response, status) {
                     if (status == 'success') {
                         bootbox.alert(response.message);
                         table.ajax.reload();
                     }
-
                 }, 'json');
             }
         });
