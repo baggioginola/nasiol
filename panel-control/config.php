@@ -16,6 +16,7 @@ define('JS', DOMAIN . 'includes/public/js/');
 define('IMAGES', DOMAIN . 'includes/public/img/');
 define('FONTS', DOMAIN . 'includes/public/fonts/');
 define('DATATABLE',DOMAIN . 'includes/public/dataTable/');
+define('FILEINPUT',DOMAIN . 'includes/public/bootstrap-fileinput-master/');
 define('CLASSES', __ROOT__ . '/core/classes/');
 define('__CONTROLLER__', __ROOT__ . '/app/controller/');
 define('__MODEL__', __ROOT__ . '/app/model/');

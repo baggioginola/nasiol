@@ -16,6 +16,9 @@ $app->get('/categorias', function() use($app){
     $app->render('/categorias.php');
 });
 
+$app->get('/productos', function() use($app){
+    $app->render('/productos.php');
+});
 
 $app->get('/test/:id', function($id) use($app){
     switch($id){

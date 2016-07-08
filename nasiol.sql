@@ -36,6 +36,9 @@ CREATE TABLE `categoria` (
 PRIMARY KEY(`id`)
 ) ENGINE= InnoDB DEFAULT CHARSET = latin1;
 
+INSERT INTO `categoria`(`nombre`)
+values(`Categoria1`);
+
 DROP TABLE IF EXISTS `producto`;
 
 CREATE TABLE `producto` (
@@ -45,6 +48,10 @@ CREATE TABLE `producto` (
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 `imagenes` TEXT,
+`precio` decimal(10,2),
+`descripcion` TEXT,
+`url_video` varchar(250),
+`especificaciones` text,
 `active` boolean DEFAULT TRUE,
 PRIMARY KEY(`id`),
   CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id`)

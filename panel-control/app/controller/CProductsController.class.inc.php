@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: mario.cuevas
- * Date: 6/24/2016
- * Time: 4:46 PM
+ * Date: 7/6/2016
+ * Time: 3:56 PM
  */
 
 require_once 'CBaseController.class.inc.php';
-require_once __MODEL__ . 'CCategoriesModel.class.inc.php';
+require_once __MODEL__ . 'CProductsModel.class.inc.php';
 
-class Categories extends BaseController
+class Products extends BaseController
 {
     private static $object = null;
 
@@ -17,14 +17,16 @@ class Categories extends BaseController
 
     private $validParameters = array(
         'id' => TYPE_INT,
+        'id_categoria' => TYPE_INT,
         'nombre' => TYPE_ALPHA,
         'active' => TYPE_INT,
-        'imagenes' => TYPE_ALPHA
+        'imagenes' => TYPE_ALPHA,
+        'descripcion' => TYPE_ALPHA,
+        'precio' => TYPE_FLOAT,
+        'especificaciones' => TYPE_ALPHA
+
     );
 
-    /**
-     * @return Categories|null
-     */
     public static function singleton()
     {
         if (is_null(self::$object)) {
@@ -33,12 +35,9 @@ class Categories extends BaseController
         return self::$object;
     }
 
-    /**
-     * @return string
-     */
     public function getAll()
     {
-        $result = CategoriesModel::singleton()->getAll();
+        $result = ProductsModel::singleton()->getAll();
         return json_encode($result);
     }
 
@@ -48,7 +47,7 @@ class Categories extends BaseController
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        if (!CategoriesModel::singleton()->add($this->parameters)) {
+        if (!ProductsModel::singleton()->add($this->parameters)) {
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
@@ -64,7 +63,7 @@ class Categories extends BaseController
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        $result = CategoriesModel::singleton()->getById($this->parameters['id']);
+        $result = ProductsModel::singleton()->getById($this->parameters['id']);
 
         return json_encode($result);
     }
@@ -82,7 +81,7 @@ class Categories extends BaseController
 
         unset($this->parameters['id']);
 
-        if (!CategoriesModel::singleton()->edit($this->parameters, $id)) {
+        if (!ProductsModel::singleton()->edit($this->parameters, $id)) {
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
@@ -102,7 +101,7 @@ class Categories extends BaseController
 
         unset($this->parameters['id']);
 
-        if (!$user_id = CategoriesModel::singleton()->edit($this->parameters, $id)) {
+        if (!$user_id = ProductsModel::singleton()->edit($this->parameters, $id)) {
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 

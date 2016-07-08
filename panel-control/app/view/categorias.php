@@ -11,6 +11,13 @@
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="ejemplo_email_3" class="col-lg-2 control-label">Imagenes</label>
+                <div class="col-lg-10">
+                    <input id="id_imagen" name="imagenes[]" multiple type="file" class="file-loading" accept="image/*" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
             <div class="form-group" style="text-align: right;">
                 <div class="col-lg-offset-2 col-lg-10">
                     <button type="submit" class="btn btn-primary" id="id_submit">Aceptar</button>
@@ -18,7 +25,6 @@
                 </div>
             </div>
             <input type="hidden" id="submit_type" value="categorias/add" />
-            <input type="hidden" id="submit_pw" />
             <input type="hidden" id="submit_id" />
         </form>
     </div>

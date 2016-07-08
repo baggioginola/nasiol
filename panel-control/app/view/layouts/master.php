@@ -15,6 +15,7 @@
     <link href="<?php echo CSS; ?>dashboard.css" rel="stylesheet">
     <link href="<?php echo CSS; ?>datatable.css" rel="stylesheet">
     <link href="<?php echo DATATABLE; ?>Select/css/select.bootstrap.css" rel="stylesheet">
+    <link href="<?php echo FILEINPUT; ?>css/fileinput.css" rel="stylesheet">
 
 
 </head>
@@ -45,5 +46,8 @@
 <script type="text/javascript" src="<?php echo JS; ?>functions.js" ></script>
 <script type="text/javascript" src="<?php echo DATATABLE; ?>datatable.js"></script>
 <script type="text/javascript" src="<?php echo DATATABLE; ?>Select/js/dataTables.select.js"></script>
+<script type="text/javascript" src="<?php echo FILEINPUT; ?>js/fileinput.js"></script>
+<script type="text/javascript" src="<?php echo FILEINPUT; ?>js/locales/es.js"></script>
+<script type="text/javascript" src="<?php echo FILEINPUT; ?>js/plugins/canvas-to-blob.js"></script>
 </body>
 </html>
