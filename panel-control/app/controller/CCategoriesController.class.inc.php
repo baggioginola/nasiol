@@ -118,6 +118,8 @@ class Categories extends BaseController
             return false;
         }
 
+        echo print_r($_POST,1);
+        die();
         if (!$this->validateParameters($_POST, $this->validParameters)) {
             return false;
         }

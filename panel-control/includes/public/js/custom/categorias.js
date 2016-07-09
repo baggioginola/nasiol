@@ -4,11 +4,11 @@
 $(document).ready(function ()
 {
     $("#id_imagen").fileinput({
-        uploadUrl: "/site/image-upload",
+        uploadUrl: "imagenes/add",
         allowedFileExtensions: ["jpg", "png", "gif"],
         maxFileCount: 3,
-        minFileCount: 3,
-        resizeImage: true,
+        minFileCount : 3,
+        uploadAsync: false,
         language: "es",
         showUpload: false,
         fileActionSettings : {showUpload: false}
@@ -65,8 +65,9 @@ $(document).ready(function ()
         return false;
     });
 
-    var form = $('#form_global').submit(function () {
-        if ($('#id_submit').hasClass('disabled')) {
+    var form = $('#form_global').submit(function ()
+    {
+        if ($('#id_imagen').fileinput('upload') == null || $('#id_submit').hasClass('disabled')) {
             return false;
         }
         var data = $(this).serialize();

@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label for="ejemplo_email_3" class="col-lg-2 control-label">Imagenes</label>
                 <div class="col-lg-10">
-                    <input id="id_imagen" name="imagenes[]" multiple type="file" class="file-loading" accept="image/*" required>
+                    <input id="id_imagen" name="imagenes[]" multiple type="file" class="file-loading" accept="image/*">
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>
