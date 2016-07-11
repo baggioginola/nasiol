@@ -5,13 +5,17 @@ $(document).ready(function ()
 {
     $("#id_imagen").fileinput({
         uploadUrl: "imagenes/add",
-        allowedFileExtensions: ["jpg", "png", "gif"],
+        allowedFileExtensions: ["jpg", "png"],
         maxFileCount: 3,
         minFileCount : 3,
         uploadAsync: false,
         language: "es",
         showUpload: false,
-        fileActionSettings : {showUpload: false}
+        fileActionSettings : {showUpload: false},
+        uploadExtraData: function (previewId, index) {
+            var info = {"type": "categorias", "name" : $("#id_nombre").val()};
+            return info;
+        }
     });
 
     $('#reset_button').click(function () {

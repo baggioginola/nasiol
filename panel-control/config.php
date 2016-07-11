@@ -8,7 +8,7 @@
 define('ENVIRONMENT', 'test'); # must be production or test.
 define('__ROOT__', dirname(__FILE__));
 //define('PROJECT', 'system/');
-define('PROJECT', 'vc/test/nasiol/panel-control/');
+define('PROJECT', 'Github/nasiol/panel-control/');
 define('DOMAIN', 'http://' . $_SERVER['HTTP_HOST'] . '/' . PROJECT);
 
 define('CSS', DOMAIN . 'includes/public/css/');
@@ -25,6 +25,7 @@ define('INCLUDES', DOMAIN . 'includes/');
 
 #templates
 define('TEMPLATE',  __ROOT__ . '/app/view/template/');
+define('BASE_IMAGES',  __ROOT__ . '/includes/public/img/');
 #Databases
 define('DBHOST', 'localhost');
 define('DBNAME', 'nasiol');

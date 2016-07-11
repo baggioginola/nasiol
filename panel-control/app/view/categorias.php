@@ -7,7 +7,7 @@
             <div class="form-group has-feedback">
                 <label for="ejemplo_email_3" class="col-lg-2 control-label">Nombre</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="id_nombre" placeholder="Nombre" required autocomplete="off" name="nombre">
+                    <input type="text" class="form-control" id="id_nombre" placeholder="Nombre" required autocomplete="off" name="nombre" value="test">
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>
