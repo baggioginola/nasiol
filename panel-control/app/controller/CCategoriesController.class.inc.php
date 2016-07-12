@@ -118,17 +118,16 @@ class Categories extends BaseController
             return false;
         }
 
-        //array_walk($_POST, "");
-        echo print_r($_POST,1);
-        die();
         if (!$this->validateParameters($_POST, $this->validParameters)) {
             return false;
         }
 
         foreach ($_POST as $key => $value) {
-            $this->parameters[$key] = $value;
+            if($key == 'nombre') {
+                $this->parameters['key_nombre'] = createName(trim($value));
+            }
+            $this->parameters[$key] = trim($value);
         }
-
         return true;
     }
 }

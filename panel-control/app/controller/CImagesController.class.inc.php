@@ -7,6 +7,8 @@
  */
 
 require_once 'CBaseController.class.inc.php';
+require_once CLASSES . 'CDir.class.inc.php';
+
 class Images extends BaseController
 {
     public static $object = null;
@@ -15,9 +17,13 @@ class Images extends BaseController
 
     private $name = null;
     private $pathImage = null;
+    private $type = null;
 
-    private $validParameters = array(
-        'imagenes' => TYPE_ALPHA
+    private $sizes = array(
+        'categorias' => array('0' => array('width' => 927, 'height' => 285),
+            '1' => array('width' => 307, 'height' => 128),
+            '2' => array('width' => 307, 'height' => 128),
+            '3' => array('width' => 307, 'height' => 128))
     );
 
     public static function singleton()
@@ -33,8 +39,13 @@ class Images extends BaseController
      */
     public function add()
     {
-        if(!$this->_setPathImage()) {
+
+        if(!$this->_setPathImageName()) {
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        if(!CDir::singleton()->createDir($this->pathImage)) {
+            return false;
         }
 
         if (!$this->_setParameters()) {
@@ -56,30 +67,44 @@ class Images extends BaseController
             return false;
         }
 
+        ini_set('memory_limit',20000000000);
         foreach ($this->parameters as $parameter => $value) {
             if (!move_uploaded_file($this->parameters[$parameter]['tmp_name'], 
-                $this->_getPathImage() . $this->parameters[$parameter]['name'])) {
+                $this->pathImage . $this->parameters[$parameter]['name'])) {
                 return false;
             }
         }
+
+        foreach ($this->parameters as $parameter => $value) {
+                resizeImage($this->pathImage . $this->parameters[$parameter]['name'], $this->sizes[$this->type][$parameter]['height'], $this->sizes[$this->type][$parameter]['width'], $this->parameters[$parameter]['extension']);
+        }
+        ini_restore ( 'memory_limit' );
         return true;
     }
 
-    private function _setPathImage()
+    private function _setPathImageName()
     {
         if(!isset($_REQUEST['type']) || empty($_REQUEST['type'])) {
             return false;
         }
 
-        $type = trim($_REQUEST['type']);
-        $this->pathImage = BASE_IMAGES . "/" . $type . "/";
+        if(!$this->_setPathName()) {
+            return false;
+        }
+
+        $this->type = trim($_REQUEST['type']);
+        $this->pathImage = BASE_IMAGES . "/" . $this->type . "/" . $this->name . "/";
 
         return true;
     }
 
-    private function _getPathImage()
+    private function _setPathName()
     {
-        return $this->pathImage;
+        if(!isset($_REQUEST['name']) || empty($_REQUEST['name'])) {
+            return false;
+        }
+        $this->name = createName($_REQUEST['name']);
+        return true;
     }
 
     /**
@@ -90,18 +115,15 @@ class Images extends BaseController
         if (!isset($_FILES) || empty($_FILES)) {
             return false;
         }
-
-        if(!$this->_setPathName()) {
-            return false;
-        }
-
         $i = 0;
         foreach ($_FILES as $key => $value) {
             foreach ($value as $item => $val) {
                 foreach ($val as $tmp => $name) {
                     if($item == 'name') {
                         $ext = explode(".", $name);
-                        $name = $this->name . $i . "." . $ext[1];
+                        $lastElement = sizeof($ext);
+                        $name = $this->name . "-" . $i . "." . strtolower($ext[$lastElement - 1]);
+                        $this->parameters[$i]['extension'] = strtolower($ext[$lastElement - 1]);
                     }
                     $this->parameters[$i][$item] = $name;
                     $i++;
@@ -109,22 +131,7 @@ class Images extends BaseController
                 $i = 0;
             }
         }
-        echo print_r($this->parameters);
 
-        return true;
-    }
-
-    private function _setPathName()
-    {
-        if(!isset($_REQUEST['name']) || empty($_REQUEST['name'])) {
-            return false;
-        }
-        $name_trimmed = trim(strtolower($_REQUEST['name']));
-        $name_exploded = explode(" ",$name_trimmed);
-
-        foreach ($name_exploded as $key) {
-            $this->name .= $key . "-";
-        }
         return true;
     }
 }

@@ -47,7 +47,10 @@
 <script type="text/javascript" src="<?php echo DATATABLE; ?>datatable.js"></script>
 <script type="text/javascript" src="<?php echo DATATABLE; ?>Select/js/dataTables.select.js"></script>
 <script type="text/javascript" src="<?php echo FILEINPUT; ?>js/fileinput.js"></script>
+<script type="text/javascript" src="<?php echo FILEINPUT; ?>js/plugins/sortable.min.js"></script>
+<script type="text/javascript" src="<?php echo FILEINPUT; ?>js/plugins/purify.min.js"></script>
 <script type="text/javascript" src="<?php echo FILEINPUT; ?>js/locales/es.js"></script>
 <script type="text/javascript" src="<?php echo FILEINPUT; ?>js/plugins/canvas-to-blob.js"></script>
+
 </body>
 </html>

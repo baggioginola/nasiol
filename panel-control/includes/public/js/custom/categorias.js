@@ -12,10 +12,14 @@ $(document).ready(function ()
         language: "es",
         showUpload: false,
         fileActionSettings : {showUpload: false},
+        overwriteInitial: false,
+        purifyHtml: true,
         uploadExtraData: function (previewId, index) {
             var info = {"type": "categorias", "name" : $("#id_nombre").val()};
             return info;
         }
+    }).on('filebatchuploadsuccess', function(event, data) {
+        var out = '';
     });
 
     $('#reset_button').click(function () {
@@ -74,6 +78,7 @@ $(document).ready(function ()
         if ($('#id_imagen').fileinput('upload') == null || $('#id_submit').hasClass('disabled')) {
             return false;
         }
+
         var data = $(this).serialize();
         var type = $('#submit_type').val();
         if (type == 'categorias/edit') {
