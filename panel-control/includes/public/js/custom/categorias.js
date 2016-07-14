@@ -75,7 +75,31 @@ $(document).ready(function ()
 
     var form = $('#form_global').submit(function ()
     {
-        if ($('#id_imagen').fileinput('upload') == null || $('#id_submit').hasClass('disabled')) {
+        if ($('#id_submit').hasClass('disabled')) {
+            return false;
+        }
+
+        var url = 'categorias/checkDuplicatedName';
+        var data_name = {nombre:$('#id_nombre').val()}
+
+        var checkDuplicated = $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            data: data_name,
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                return data;
+            }
+        });
+
+        if(checkDuplicated.responseJSON.status == 200) {
+            submit_response(form, checkDuplicated.responseJSON, 'categorias/add');
+            return false;
+        }
+
+        if ($('#id_imagen').fileinput('upload') == null) {
             return false;
         }
 
@@ -91,6 +115,7 @@ $(document).ready(function ()
             cache: false,
             data: data,
             dataType: 'json',
+            async: false,
             success: function (data) {
                 table.ajax.reload();
                 submit_response(form, data, 'categorias/add');

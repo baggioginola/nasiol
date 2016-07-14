@@ -113,6 +113,22 @@ class Categories extends BaseController
     }
 
     /**
+     * @return string
+     */
+    public function checkDuplicatedName()
+    {
+        if (!$this->_setParameters()) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        if(!$result = CategoriesModel::singleton()->getByName($this->parameters['key_nombre'])) {
+            return json_encode($this->getResponse(STATUS_FAILURE_CLIENT, MESSAGE_EMPTY));
+        }
+
+        return json_encode($this->getResponse(STATUS_SUCCESS, MESSAGE_EXISTS));
+    }
+
+    /**
      * @return bool
      */
     private function _setParameters()

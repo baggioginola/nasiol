@@ -34,7 +34,8 @@ CREATE TABLE `categoria` (
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 `active` boolean DEFAULT TRUE,
 `imagenes` TEXT,
-PRIMARY KEY(`id`)
+PRIMARY KEY(`id`),
+INDEX(`key_nombre`)
 ) ENGINE= InnoDB DEFAULT CHARSET = latin1;
 
 DROP TABLE IF EXISTS `producto`;
@@ -53,6 +54,7 @@ CREATE TABLE `producto` (
 `especificaciones` text,
 `active` boolean DEFAULT TRUE,
 PRIMARY KEY(`id`),
+INDEX(`key_nombre`),
   CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id`)
 ) ENGINE= InnoDB DEFAULT CHARSET = latin1;
 

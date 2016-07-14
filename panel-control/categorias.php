@@ -47,4 +47,12 @@ $app->group('/categorias', function () use($app) {
         }
         echo $result;
     });
+
+    $app->post('/checkDuplicatedName', function() use($app){
+        require_once __CONTROLLER__ . 'CCategoriesController.class.inc.php';
+        if(!$result = Categories::singleton()->checkDuplicatedName()) {
+            echo 'Fail';
+        }
+        echo $result;
+    });
 });

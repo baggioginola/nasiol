@@ -7,8 +7,8 @@
  */
 define('ENVIRONMENT', 'test'); # must be production or test.
 define('__ROOT__', dirname(__FILE__));
-//define('PROJECT', 'system/');
-define('PROJECT', 'Github/nasiol/panel-control/');
+define('PROJECT', 'vc/test/nasiol/panel-control/');
+//define('PROJECT', 'Github/nasiol/panel-control/');
 define('DOMAIN', 'http://' . $_SERVER['HTTP_HOST'] . '/' . PROJECT);
 
 define('CSS', DOMAIN . 'includes/public/css/');
@@ -43,3 +43,5 @@ define('STATUS_FAILURE_INTERNAL', 500);
 
 define('MESSAGE_SUCCESS', 'La transaccion fue exitosa');
 define('MESSAGE_ERROR', 'La transaccion fue fallida, intente mas tarde');
+define('MESSAGE_EMPTY', 'El registro no existe');
+define('MESSAGE_EXISTS', 'El nombre ya existe, intente otro diferente');
