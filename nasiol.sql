@@ -29,6 +29,7 @@ DROP TABLE IF EXISTS `categoria`;
 CREATE TABLE `categoria` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `nombre` varchar(500) NOT NULL,
+`key_nombre` varchar(500) NOT NULL,
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 `active` boolean DEFAULT TRUE,
@@ -36,14 +37,12 @@ CREATE TABLE `categoria` (
 PRIMARY KEY(`id`)
 ) ENGINE= InnoDB DEFAULT CHARSET = latin1;
 
-INSERT INTO `categoria`(`nombre`)
-values(`Categoria1`);
-
 DROP TABLE IF EXISTS `producto`;
 
 CREATE TABLE `producto` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `nombre` varchar(500) NOT NULL,
+`key_nombre` varchar(500) NOT NULL,
 `id_categoria` int(11) NOT NULL,
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

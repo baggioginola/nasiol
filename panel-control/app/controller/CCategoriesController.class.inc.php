@@ -42,6 +42,9 @@ class Categories extends BaseController
         return json_encode($result);
     }
 
+    /**
+     * @return string
+     */
     public function add()
     {
         if (!$this->_setParameters()) {
@@ -124,9 +127,9 @@ class Categories extends BaseController
 
         foreach ($_POST as $key => $value) {
             if($key == 'nombre') {
-                $this->parameters['key_nombre'] = createName(trim($value));
+                $this->parameters['key_nombre'] = formatForUrl($value);
             }
-            $this->parameters[$key] = trim($value);
+            $this->parameters[$key] = formatString($value);
         }
         return true;
     }

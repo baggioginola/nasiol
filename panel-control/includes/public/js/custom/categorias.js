@@ -6,8 +6,8 @@ $(document).ready(function ()
     $("#id_imagen").fileinput({
         uploadUrl: "imagenes/add",
         allowedFileExtensions: ["jpg", "png"],
-        maxFileCount: 3,
-        minFileCount : 3,
+        maxFileCount: 4,
+        minFileCount : 4,
         uploadAsync: false,
         language: "es",
         showUpload: false,

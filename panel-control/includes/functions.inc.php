@@ -6,64 +6,6 @@
  * Time: 12:02 PM
  */
 
-function queryAddString($data = array())
-{
-    $addString = '';
-
-    $columns = '';
-    $values = '';
-    $counter = 0;
-    foreach ($data as $key => $value) {
-        if($counter == sizeof($data) - 1){
-            $columns .= $key;
-            $values .= "'$value'";
-        }
-        else {
-            $columns .= $key . ',';
-            $values .= "'$value'" . ',';
-        }
-        $counter++;
-    }
-
-    if(!empty($columns) && !empty($values)) {
-        $addString = '(' . $columns . ') VALUES (' . $values . ')';
-    }
-
-    return $addString;
-}
-
-function queryUpdateString($data = array())
-{
-    $updateString = '';
-    $counter = 0;
-    foreach($data as $key => $value) {
-        if($counter == sizeof($data) - 1) {
-            $updateString .= $key . '="' . $value . '"';
-        }
-        else {
-            $updateString .= $key . ' = "' . $value . '", ';
-        }
-        $counter++;
-    }
-
-    return $updateString;
-}
-
-function createName($data = null)
-{
-    $name = '';
-    $name_trimmed = trim(strtolower($data));
-    $name_exploded = explode(" ",$name_trimmed);
-
-    foreach ($name_exploded as $key) {
-        if ($key !== end($name_exploded)) {
-            $name .= $key . "-";
-        }
-        $name .= $key;
-    }
-    return $name;
-}
-
 function resizeImage($path, $height, $width, $extension)
 {
     if($extension == 'jpg') {
@@ -76,25 +18,25 @@ function resizeImage($path, $height, $width, $extension)
         $img_original = imagecreatefromjpeg($path);
     }
 
-    $max_ancho = $width;
-    $max_alto = $height;
+    $max_width = $width;
+    $max_height = $height;
 
     list($ancho,$alto) = getimagesize($path);
 
-    $x_ratio = $max_ancho / $ancho;
-    $y_ratio = $max_alto / $alto;
+    $x_ratio = $max_width / $ancho;
+    $y_ratio = $max_height / $alto;
 
-    if( ($ancho <= $max_ancho) && ($alto <= $max_alto) ) {
+    if( ($ancho <= $max_width) && ($alto <= $max_height) ) {
         $ancho_final = $ancho;
         $alto_final = $alto;
     }
-    elseif (($x_ratio * $alto) < $max_alto) {
+    elseif (($x_ratio * $alto) < $max_height) {
         $alto_final = ceil($x_ratio * $alto);
-        $ancho_final = $max_ancho;
+        $ancho_final = $max_width;
     }
     else {
         $ancho_final = ceil($y_ratio * $ancho);
-        $alto_final = $max_alto;
+        $alto_final = $max_height;
     }
 
     $tmp = imagecreatetruecolor($ancho_final,$alto_final);
@@ -114,8 +56,8 @@ function resizeImage($path, $height, $width, $extension)
         imagecolortransparent($tmp2,$color);
     }
 
-    $distancia_x = round(($max_ancho - $ancho_final) / 2);
-    $distancia_y = round(($max_alto - $alto_final) / 2);
+    $distancia_x = round(($max_width - $ancho_final) / 2);
+    $distancia_y = round(($max_height - $alto_final) / 2);
 
     imagecopy($tmp2 , $tmp , $distancia_x ,$distancia_y , 0, 0 , $ancho_final , $alto_final );
 
@@ -127,4 +69,44 @@ function resizeImage($path, $height, $width, $extension)
         $calidad = 8;
         imagepng($tmp2, $path, $calidad, PNG_ALL_FILTERS);
     }
+}
+
+/**
+ * Sanitizes an user inputed variable or a GET variable
+ *
+ * @param string $variable Variable to be sanitized
+ * @param string $filter Filter to be used. Default FILTER_SANITIZE_STRING,
+ *        all the available filters are listed at http://php.net/manual/en/filter.filters.php
+ *
+ * @return array Information about the country.
+ */
+function sanitizeVariable($variable, $filter = FILTER_SANITIZE_STRING) {
+    return filter_var($variable, FILTER_SANITIZE_STRING);
+}
+
+function stripNonAlphaNumeric( $string ) {
+    return preg_replace( "/[^a-z0-9]/i", "", $string );
+}
+
+function stripExcessWhitespace($string)
+{
+    return preg_replace( '/  +/', ' ', $string );
+}
+
+function stripNonAlphaNumericSpaces( $string ) {
+    return preg_replace( "/[^a-z0-9 ]/i", "", $string );
+}
+
+function formatForUrl( $string )
+{
+    $string = stripNonAlphaNumericSpaces( trim( strtolower( $string ) ) );
+
+    return str_replace( " ", "-", stripExcessWhitespace( trim($string) ) );
+}
+
+function formatString($string)
+{
+    $string = stripNonAlphaNumericSpaces(trim($string));
+
+    return stripExcessWhitespace(trim($string));
 }

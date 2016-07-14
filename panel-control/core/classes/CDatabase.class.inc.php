@@ -27,7 +27,7 @@ class Database
             return false;
         }
 
-        $addString = queryAddString($data);
+        $addString = $this->queryAddString($data);
 
         if (empty($addString)) {
             return false;
@@ -44,7 +44,7 @@ class Database
             return false;
         }
 
-        $updateString = queryUpdateString($data);
+        $updateString = $this->queryUpdateString($data);
 
         if (empty($updateString)) {
             return false;
@@ -110,5 +110,48 @@ class Database
     {
         mysqli_close($this->link);
         $this->link = null;
+    }
+
+    private function queryAddString($data = array())
+    {
+        $addString = '';
+
+        $columns = '';
+        $values = '';
+        $counter = 0;
+        foreach ($data as $key => $value) {
+            if($counter == sizeof($data) - 1){
+                $columns .= $key;
+                $values .= "'$value'";
+            }
+            else {
+                $columns .= $key . ',';
+                $values .= "'$value'" . ',';
+            }
+            $counter++;
+        }
+
+        if(!empty($columns) && !empty($values)) {
+            $addString = '(' . $columns . ') VALUES (' . $values . ')';
+        }
+
+        return $addString;
+    }
+
+    private function queryUpdateString($data = array())
+    {
+        $updateString = '';
+        $counter = 0;
+        foreach($data as $key => $value) {
+            if($counter == sizeof($data) - 1) {
+                $updateString .= $key . '="' . $value . '"';
+            }
+            else {
+                $updateString .= $key . ' = "' . $value . '", ';
+            }
+            $counter++;
+        }
+
+        return $updateString;
     }
 }

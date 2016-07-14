@@ -26,6 +26,9 @@ class Images extends BaseController
             '3' => array('width' => 307, 'height' => 128))
     );
 
+    /**
+     * @return Images|null
+     */
     public static function singleton()
     {
         if (is_null(self::$object)) {
@@ -69,7 +72,7 @@ class Images extends BaseController
 
         ini_set('memory_limit',20000000000);
         foreach ($this->parameters as $parameter => $value) {
-            if (!move_uploaded_file($this->parameters[$parameter]['tmp_name'], 
+            if (!move_uploaded_file($this->parameters[$parameter]['tmp_name'],
                 $this->pathImage . $this->parameters[$parameter]['name'])) {
                 return false;
             }
@@ -82,6 +85,9 @@ class Images extends BaseController
         return true;
     }
 
+    /**
+     * @return bool
+     */
     private function _setPathImageName()
     {
         if(!isset($_REQUEST['type']) || empty($_REQUEST['type'])) {
@@ -93,17 +99,20 @@ class Images extends BaseController
         }
 
         $this->type = trim($_REQUEST['type']);
-        $this->pathImage = BASE_IMAGES . "/" . $this->type . "/" . $this->name . "/";
+        $this->pathImage = BASE_IMAGES . $this->type . "/" . $this->name . "/";
 
         return true;
     }
 
+    /**
+     * @return bool
+     */
     private function _setPathName()
     {
         if(!isset($_REQUEST['name']) || empty($_REQUEST['name'])) {
             return false;
         }
-        $this->name = createName($_REQUEST['name']);
+        $this->name = formatForUrl($_REQUEST['name']);
         return true;
     }
 
@@ -131,7 +140,6 @@ class Images extends BaseController
                 $i = 0;
             }
         }
-
         return true;
     }
 }
