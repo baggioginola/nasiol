@@ -9,6 +9,7 @@
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../autoload.common.php';
 require_once FRAMEWORK . 'Slim/Slim.php';
+require_once CLASSES . 'CLogs.class.inc.php';
 
 if (strcasecmp(ENVIRONMENT, 'test') == 0) {
     error_reporting(E_ALL);
@@ -26,3 +27,11 @@ $app  = new \Slim\Slim(array(
         'http.version' => '1.1'
     )
 );
+
+$app->notFound(function () use ($app) {
+
+    $response = array(
+        'type' => 'not_found',
+        'message' => 'The requested resource does not exist.'
+    );
+});

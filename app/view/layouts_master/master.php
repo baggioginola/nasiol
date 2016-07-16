@@ -68,6 +68,7 @@ if($resourceUri == '/') {
 <script type="text/javascript" src="<?php echo JS; ?>common.js"></script>
 
 <script type="text/javascript" src="<?php echo JS; ?>custom.js"></script>
+<script type="text/javascript" src="<?php echo JS; ?>custom/baseFunctions.js"></script>
 <script type="text/javaScript" src="<?php echo JS; ?>cloud-zoom.1.0.2.js"></script>
 <script type="text/javaScript" src="<?php echo JS; ?>slidingbox.js"></script>
 <script type="text/javascript" src="<?php echo JS; ?>tooltip/jquery.qtip.js"></script>

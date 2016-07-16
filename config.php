@@ -26,7 +26,7 @@ define('DATABASE',  __ROOT__ . '/core/framework/readBean/');
 define('TEMPLATE',  __ROOT__ . '/app/view/template/');
 #Databases
 define('DBHOST', 'localhost');
-define('DBNAME', '');
+define('DBNAME', 'nasiol');
 define('DBUSER', 'root');
 define('DBPASS', '');
 
@@ -38,3 +38,6 @@ define('MAIL_FROM', 'From: Debugger-Core <debug@grupocoser.com>');
 define('STATUS_SUCCESS', 200);
 define('STATUS_FAILURE_CLIENT', 404);
 define('STATUS_FAILURE_INTERNAL', 500);
+
+define('MESSAGE_SUCCESS', 'La transaccion fue exitosa');
+define('MESSAGE_ERROR', 'La transaccion fue fallida, intente mas tarde');

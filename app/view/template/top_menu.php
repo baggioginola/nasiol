@@ -41,6 +41,7 @@
                 <a href="#">nano coating products</a>
                 <div>
                     <div class="sub-menu-content">
+                        <!--
                         <ul>
                             <li><a href="<?php echo DOMAIN; ?>proteccion-superficie-carro">PROTECCION SUPERFICIE DEL CARRO</a></li>
                             <li><a href="">HOME SURFACE PROTECTION </a></li>
@@ -48,6 +49,7 @@
                             <li><a href="">PERSONAL SURFACE PROTECTION </a></li>
                             <li><a href="">BULK SIZE PRODUCTS </a></li>
                         </ul>
+                        !-->
                     </div>
                 </div>
             </li>

@@ -10,6 +10,7 @@ $app->get('/', function() use ($app) {
     $app->render('index.php');
 });
 
+
 $app->get('/informacion-nanotecnologia', function() use ($app){
     $app->render('informacion.php');
 });
@@ -42,11 +43,17 @@ $app->get('/videos-producto', function() use ($app){
     $app->render('producto_videos.php');
 });
 
-$app->get('/proteccion-superficie-carro', function() use ($app){
+
+/*$app->get('/proteccion-superficie-carro', function() use ($app){
     $app->render('categoria.php');
 });
+*/
 
 $app->get('/proteccion-superficie-carro/:id', function() use ($app){
     $data = array('id_producto' => 1, 'nombre' => 'Test');
     $app->render('producto.php',array('resultados' => $data));
+});
+
+$app->get('/:id', function() use ($app) {
+    $app->render('categoria.php');
 });
