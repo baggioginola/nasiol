@@ -4,6 +4,25 @@
 
 $(document).ready(function ()
 {
+    $("#id_imagen").fileinput({
+        uploadUrl: "imagenes/add",
+        allowedFileExtensions: ["jpg", "png"],
+        maxFileCount: 4,
+        minFileCount : 4,
+        uploadAsync: false,
+        language: "es",
+        showUpload: false,
+        fileActionSettings : {showUpload: false},
+        overwriteInitial: false,
+        purifyHtml: true,
+        uploadExtraData: function (previewId, index) {
+            var info = {"type": "productos", "name" : $("#id_nombre").val()};
+            return info;
+        }
+    }).on('filebatchuploadsuccess', function(event, data) {
+        var out = '';
+    });
+
     $.post('categorias/getAll', function (response) {
         $.each(response, function (key, val) {
             $("#id_categoria").append('<option value="'+val.id+'">'+val.nombre+'</option>');
@@ -70,6 +89,31 @@ $(document).ready(function ()
         if ($('#id_submit').hasClass('disabled')) {
             return false;
         }
+
+        var url = 'productos/checkDuplicatedName';
+        var data_name = {nombre:$('#id_nombre').val()}
+
+        var checkDuplicated = $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            data: data_name,
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                return data;
+            }
+        });
+
+        if(checkDuplicated.responseJSON.status == 200) {
+            submit_response(form, checkDuplicated.responseJSON, 'productos/add');
+            return false;
+        }
+
+        if ($('#id_imagen').fileinput('upload') == null) {
+            return false;
+        }
+
         var data = $(this).serialize();
         var type = $('#submit_type').val();
         if (type == 'productos/edit') {

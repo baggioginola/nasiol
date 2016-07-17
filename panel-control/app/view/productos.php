@@ -1,7 +1,4 @@
-
 <script type="text/javascript" src="<?php echo JS; ?>custom/productos.js"></script>
-<script type="text/javascript" src="<?php echo JS; ?>fileinput.js"></script>
-
 
 <h2 class="sub-header">Productos</h2>
 <div class="panel panel-default">
@@ -40,6 +37,13 @@
                 <label for="ejemplo_email_3" class="col-lg-2 control-label">Especificaciones</label>
                 <div class="col-lg-10">
                     <textarea class="form-control" rows="5" id="id_especificaciones" name="especificaciones" required style="resize: none;"></textarea>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ejemplo_email_3" class="col-lg-2 control-label">Imagenes</label>
+                <div class="col-lg-10">
+                    <input id="id_imagen" name="imagenes[]" multiple type="file" class="file-loading" accept="image/*">
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>

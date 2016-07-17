@@ -100,6 +100,33 @@ class ProductsModel extends Database
         return $result_array;
     }
 
+    public function getByName($name = '')
+    {
+        if (empty($name)) {
+            return false;
+        }
+
+        if (!$this->connect()) {
+            return false;
+        }
+
+        $result_array = array();
+
+        $query = "SELECT id,nombre FROM " . self::$table . " WHERE key_nombre = '" . $name . "' ";
+
+        if (!$result = $this->query($query)) {
+            return false;
+        }
+
+        $this->close_connection();
+
+        while ($row = $this->fetch_assoc($result)) {
+            $result_array = $row;
+        }
+
+        return $result_array;
+    }
+
     /**
      * @param array $data
      * @return bool|int|string

@@ -109,6 +109,22 @@ class Products extends BaseController
     }
 
     /**
+     * @return string
+     */
+    public function checkDuplicatedName()
+    {
+        if (!$this->_setParameters()) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        if(!$result = ProductsModel::singleton()->getByName($this->parameters['key_nombre'])) {
+            return json_encode($this->getResponse(STATUS_FAILURE_CLIENT, MESSAGE_EMPTY));
+        }
+
+        return json_encode($this->getResponse(STATUS_SUCCESS, MESSAGE_EXISTS));
+    }
+
+    /**
      * @return bool
      */
     private function _setParameters()
@@ -122,7 +138,10 @@ class Products extends BaseController
         }
 
         foreach ($_POST as $key => $value) {
-            $this->parameters[$key] = $value;
+            if($key == 'nombre') {
+                $this->parameters['key_nombre'] = formatForUrl($value);
+            }
+            $this->parameters[$key] = formatString($value);
         }
 
         return true;
