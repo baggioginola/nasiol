@@ -3748,7 +3748,7 @@ ul.box-category > li ul.subnew > li > a {
     font-family: 'OpenSans';
     font-size:14px;
     height:42px;
-
+    padding-left:10px;
 }
 
 .htabs {

@@ -1,3 +1,4 @@
+<script type="text/javascript" src="<?php echo JS; ?>custom/categorias.js"></script>
 <div id="container2">
     <div id="scroll-down-target"></div>
     <div style="clear:both;"></div>
@@ -5,9 +6,9 @@
 
     <div id="content">
         <div id="breadcrumb-center" class="breadcrumb1">
-            <a href="http://www.nasiol.com/">Home</a>
-            &raquo; <a href="http://www.nasiol.com/products">Nano coatings</a>
-            &raquo; <a href="http://www.nasiol.com/products/car-coating">CAR SURFACE PROTECTION</a>
+            <a href="<?php echo DOMAIN; ?>">Inicio</a>
+            &raquo; <a href="#">Nano coatings</a>
+            &raquo; <a href="#" id="category-name" style="text-transform: uppercase"></a>
         </div>
 
         <?php require_once TEMPLATE . 'category_header.php'; ?>

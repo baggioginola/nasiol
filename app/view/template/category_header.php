@@ -5,7 +5,10 @@
     <div class="welcome-message">
         <p>
             <br/>
-            <img alt="car paint protection" src="<?php echo IMAGES; ?>car-coating/car-paint-protection.jpg" />
+            <!--
+            <img alt="car paint protection" src="<?php echo IMAGES; ?>car-coating/car-paint-protection.jpg" id="category-1"/>
+            !-->
+            <img id="category-0"/>
         </p>
     </div>
     <div style="display: none;">
@@ -33,7 +36,7 @@
                     <img alt="men-logo" src="<?php echo IMAGES; ?>car-coating/ceramic-paint-protection.png" style="width: 34px; height: 37px;"/>
                 </div>
                 <div class="banner-bottom-bottom">
-                    <img alt="car nano paint protection" class="hoverimg" src="<?php echo IMAGES; ?>car-coating/car-nano-paint-protection.png" style="width: 308px; height: 129px;"/>
+                    <img class="hoverimg" style="width: 308px; height: 129px;" id="category-1"/>
                 </div>
             </div>
             <div class="banner-bottom first">
@@ -42,7 +45,7 @@
                 </div>
 
                 <div class="banner-bottom-bottom1">
-                    <img alt="nano car detailing" class="hoverimg" src="<?php echo IMAGES; ?>car-coating/nano-car-detailing.png" style="width: 307px; height: 129px;"/>
+                    <img class="hoverimg" style="width: 307px; height: 129px;" id="category-2"/>
                 </div>
             </div>
             <div class="banner-bottom first">
@@ -50,7 +53,7 @@
                     <img alt="ceramic coating" src="<?php echo IMAGES; ?>car-coating/ceramic-coating.png" style="width: 42px; height: 39px;"/>
                 </div>
                 <div class="banner-bottom-bottom2">
-                    <img alt="nano coating car" class="hoverimg" src="<?php echo IMAGES; ?>car-coating/nano-coating-car.png" style="width: 307px; height: 128px;"/>
+                    <img class="hoverimg" style="width: 307px; height: 128px;" id="category-3"/>
                 </div>
             </div>
             <div style="clear:both">&nbsp;</div>

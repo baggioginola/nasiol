@@ -15,4 +15,13 @@ $app->group('/categorias', function () use($app) {
         echo $result;
 
     });
+
+    $app->post('/getByName', function() use($app){
+        require_once __CONTROLLER__.'CCategoriesController.class.inc.php';
+        if(!$result = Categories::singleton()->getByName()){
+            echo 'Fail';
+        }
+        echo $result;
+
+    });
 });
