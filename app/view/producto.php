@@ -1,3 +1,5 @@
+<script type="text/javascript" src="<?php echo JS; ?>custom/productos.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo CSS; ?>producto.css" />
 <div id="container2">
     <div id="scroll-down-target"></div> <!-- This is Flexslider scroll down button target -->
     <div style="clear:both;"></div>
@@ -17,8 +19,7 @@
 
             &raquo; <a href="http://www.nasiol.com/products/car-coating/glasshield-rain-repellent">GLASSHIELD  NANO RAIN REPELLENT </a>
         </div>
-        <!-- breadcrumb-->
-        <!-- product section start-->
+
         <div class="product-info">
             <div  id="icoindi" >
                 <div class="bannericon">
@@ -63,17 +64,13 @@ tech</span></div>
                 <div id="center">
                     <div id="slider">
                         <div>
-                            <a class="prev"><img src="http://www.nasiol.com/catalog/view/theme/martha/image/prev.png"></a>
-                            <a class="next"><img src="http://www.nasiol.com/catalog/view/theme/martha/image/next.png"></a>
+                            <a class="prev"><img src="<?php echo IMAGES; ?>prev.png"></a>
+                            <a class="next"><img src="<?php echo IMAGES; ?>next.png"></a>
                             <div class="container">
                                 <div style="display: inline-block;">
                                     <a href="http://www.nasiol.com/image/cache/data/deneme glasshield-420x420.PNG" class="group1" ><img src="http://www.nasiol.com/image/cache/data/deneme glasshield-420x420.PNG" id="img-circle" class="example-image" /></a>
-
-
                                 </div>
-                                <div>
-                                    <a href="http://www.nasiol.com/image/cache/data/deneme glasshield-420x420.PNG"class="group1"> <img src="http://www.nasiol.com/image/cache/data/deneme glasshield-420x420.PNG" id="img-circle" class="example-image" /></a>
-                                </div>
+
                                 <div>
                                     <a href="http://www.nasiol.com/image/cache/data/glasshield2-420x420.PNG"class="group1"> <img src="http://www.nasiol.com/image/cache/data/glasshield2-420x420.PNG" id="img-circle" class="example-image" /></a>
                                 </div>
@@ -320,304 +317,9 @@ tech</span></div>
                 </div>
             </div>
         </div>
-        <!-- End tabs review //-->
-        <!-- Begin tags -->
-        <!-- End tags -->
-        <!-- Begin related products //-->
-        <!-- End related products //-->
 
         <div style="display: none;"><span>Welcome to ARTEKYA LTD</span></div>
         <div class="welcome-message"></div>
     </div><!-- end content -->
     <div style="clear:both;"></div>
-    <script type="text/javascript"><!--
-        $(document).ready(function() {
-            $('.colorbox').colorbox({
-                overlayClose: true,
-                opacity: 0.5,
-                rel: "colorbox"
-            });
-        });
-        //--></script>
-    <script type="text/javascript"><!--
-        $('select[name="profile_id"], input[name="quantity"]').change(function(){
-            $.ajax({
-                url: 'index.php?route=product/product/getRecurringDescription',
-                type: 'post',
-                data: $('input[name="product_id"], input[name="quantity"], select[name="profile_id"]'),
-                dataType: 'json',
-                beforeSend: function() {
-                    $('#profile-description').html('');
-                },
-                success: function(json) {
-                    $('.success, .warning, .attention, information, .error').remove();
-
-                    if (json['success']) {
-                        $('#profile-description').html(json['success']);
-                    }
-                }
-            });
-        });
-
-        $('#button-cart').bind('click', function() {
-            $.ajax({
-                url: 'index.php?route=checkout/cart/add',
-                type: 'post',
-                data: $('.product-info input[type=\'text\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
-                dataType: 'json',
-                success: function(json) {
-                    $('.success, .warning, .attention, information, .error').remove();
-
-                    if (json['error']) {
-                        if (json['error']['option']) {
-                            for (i in json['error']['option']) {
-                                $('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
-                            }
-                        }
-                        if (json['error']['profile']) {
-                            $('select[name="profile_id"]').after('<span class="error">' + json['error']['profile'] + '</span>');
-                        }
-                    }
-
-                    if (json['success']) {
-                        $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
-
-                        $('.success').fadeIn('slow');
-
-                        $('#cart-total').html(json['total']);
-
-                        $('html, body').animate({ scrollTop: 0 }, 'slow');
-                    }
-                }
-            });
-        });
-        //--></script>
-    <script type="text/javascript"><!--
-        $('#review .pagination a').live('click', function() {
-            $('#review').slideUp('slow');
-
-            $('#review').load(this.href);
-
-            $('#review').slideDown('slow');
-
-            return false;
-        });
-
-        $('#review').load('index.php?route=product/product/review&product_id=51');
-
-        $('#button-review').bind('click', function() {
-            $.ajax({
-                url: 'index.php?route=product/product/write&product_id=51',
-                type: 'post',
-                dataType: 'json',
-                data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']:checked').val() ? $('input[name=\'rating\']:checked').val() : '') + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
-                beforeSend: function() {
-                    $('.success, .warning').remove();
-                    $('#button-review').attr('disabled', true);
-                    $('#review-title').after('<div class="attention"><img src="catalog/view/theme/default/image/loading.gif" alt="" /> Please Wait!</div>');
-                },
-                complete: function() {
-                    $('#button-review').attr('disabled', false);
-                    $('.attention').remove();
-                },
-                success: function(data) {
-                    if (data.error) {
-                        $('#review-title').after('<div class="warning">' + data.error + '</div>');
-                    }
-
-                    if (data.success) {
-                        $('#review-title').after('<div class="success">' + data.success + '</div>');
-
-                        $('input[name=\'name\']').val('');
-                        $('textarea[name=\'text\']').val('');
-                        $('input[name=\'rating\']:checked').attr('checked', '');
-                        $('input[name=\'captcha\']').val('');
-                    }
-                }
-            });
-        });
-        //--></script>
-
-    <script type="text/javascript"><!--
-        $('#tabs a').tabs();
-        //--></script>
-    <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script>
-    <script type="text/javascript"><!--
-        $(document).ready(function() {
-            if ($.browser.msie && $.browser.version == 6) {
-                $('.date, .datetime, .time').bgIframe();
-            }
-
-            $('.date').datepicker({dateFormat: 'yy-mm-dd'});
-            $('.datetime').datetimepicker({
-                dateFormat: 'yy-mm-dd',
-                timeFormat: 'h:m'
-            });
-            $('.time').timepicker({timeFormat: 'h:m'});
-        });
-        //--></script>
-
-    <script type="text/javascript">
-        function printpage()
-        {
-            window.print();
-        }
-    </script>
-
-
-    <!-- Begin Quantity Plus/Minus Buttons Script //-->
-    <script type="text/javascript">
-        jQuery(document).ready(function(){
-            // This button will increment the value
-            $('.qtyplus').click(function(e){
-                // Stop acting like a button
-                e.preventDefault();
-                // Get the field name
-                fieldName = $(this).attr('field');
-                // Get its current value
-                var currentVal = parseInt($('input[name='+fieldName+']').val());
-                // If is not undefined
-                if (!isNaN(currentVal)) {
-                    // Increment
-                    $('input[name='+fieldName+']').val(currentVal + 1);
-                } else {
-                    // Otherwise put a 1 there
-                    $('input[name='+fieldName+']').val(1);
-                }
-            });
-            // This button will decrement the value till 1
-            $(".qtyminus").click(function(e) {
-                // Stop acting like a button
-                e.preventDefault();
-                // Get the field name
-                fieldName = $(this).attr('field');
-                // Get its current value
-                var currentVal = parseInt($('input[name='+fieldName+']').val());
-                // If it isn't undefined or its greater than 1
-                if (!isNaN(currentVal) && currentVal > 1) {
-                    // Decrement one
-                    $('input[name='+fieldName+']').val(currentVal - 1);
-                } else {
-                    // Otherwise put a 1 there
-                    $('input[name='+fieldName+']').val(1);
-                }
-            });
-        });
-    </script>
-    <!-- End Quantity Plus/Minus Buttons Script //-->
-    <link rel="stylesheet" href="catalog/view/theme/martha/stylesheet/lightbox.css">
-
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51c940476ad047aa" async></script>
-
-
-    <!-- lightbox css js end here -->
-
-    <script type="text/javascript">
-        var currentIndex = 0,
-            items = $('.container div'),
-            itemAmt = items.length;
-
-        function cycleItems() {
-            var item = $('.container div').eq(currentIndex);
-            items.hide();
-            item.css('display','inline-block');
-        }
-
-        var autoSlide = setInterval(function() {
-            currentIndex += 1;
-            if (currentIndex > itemAmt - 1) {
-                currentIndex = 0;
-            }
-            cycleItems();
-        }, 5000);
-
-
-        $('.next').click(function() {
-            clearInterval(autoSlide);
-            currentIndex += 1;
-            if (currentIndex > itemAmt - 1) {
-                currentIndex = 0;
-            }
-            cycleItems();
-        });
-
-        $('.prev').click(function() {
-            clearInterval(autoSlide);
-            currentIndex -= 1;
-            if (currentIndex < 0) {
-                currentIndex = itemAmt - 1;
-            }
-            cycleItems();
-        });
-    </script>
-
-    <style type="text/css">
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-        }
-        .container div {
-            width: 100%;
-            display: inline-block;
-            display: none;
-        }
-        .container img {
-            width: 100%;
-            height: auto;
-        }
-
-        button {
-            position: absolute;
-        }
-
-        .next {
-            right: 0px;
-            position: absolute;
-            top: 46%;
-            z-index: 1;}
-
-        .prev {
-            left: 0px;
-            position: absolute;
-            top: 46%;
-            z-index: 1;
-        }
-
-    </style>
-
-    <!-- Add fancyBox main JS and CSS files -->
-    <script type="text/javascript" src="catalog/view/theme/martha/js/fancybox/jquery.colorbox.js"></script>
-    <link rel="stylesheet" type="text/css" href="catalog/view/theme/martha/js/fancybox/colorbox.css" media="screen" />
-    <script>
-        $(document).ready(function(){
-            //Examples of how to assign the Colorbox event to elements
-            $(".group1").colorbox({rel:'group1'});
-
-            $('.non-retina').colorbox({rel:'group5', transition:'none'})
-            $('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
-
-            //Example of preserving a JavaScript event for inline calls.
-
-        });
-    </script>
-    <style type="text/css">
-        .fancybox-custom .fancybox-skin {
-            box-shadow: 0 0 50px #222;
-        }
-
-    </style>
-    <style>
-        .heading-product h1 {
-            text-align: left;
-            margin: -10px 0 0 0;
-            font-size: 28px;
-        }
-
-    </style>
-
-
-
 </div><!-- End container //-->
