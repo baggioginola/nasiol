@@ -33,6 +33,48 @@ $(document).ready(function ()
                 var dataProducts = {id_categoria:response.data.id};
                 $.post(url_getProducts, dataProducts, function (response, status) {
 
+                    if (status == "success") {
+                        console.log(response);
+
+                        var productForm = [];
+                        var box_product = $('.box-product');
+                        $.each(response, function (key, val) {
+
+                            productForm = [
+                            '<div>',
+                            '<div class="boxgrid">',
+                            '<div class="image">',
+                            '<a href="#">',
+                            '<img src="" alt="CAR DETAILING KIT"/>',
+                            '</a>',
+                            '</div>',
+                            '<div class="box-product-info">',
+                            '<div class="thumbnail-buttons">',
+                            '<div class="more">',
+                            '<a href="" title="View More"></a>',
+                            '</div>',
+                            '</div>',
+                            '</div>',
+                            '</div>',
+                            '<div class="boxgrid-bottom">',
+                            '<div class="arrow-box"></div>',
+                            '<div class="name">',
+                            '<a href="">CARDETAILING KIT EXTERIOR AND INTERIOR FULL CAR CARE</a>',
+                            '</div>',
+                            '<div class="price"></div>',
+                            '</div>',
+                            '</div>'];
+
+                            /*
+                            '<div>' +
+                                '<img src="assets/imagenes/avatar.png" width="23" height="23" />',
+                                '<span class="name">',params.name,
+                                '</span><a href="?c=chat&m=logout" class="logoutButton rounded">Salir</a></span>'];
+                            */
+                            alert(productForm.join(''));
+                            box_product.html(productForm.join(''));
+                        });
+                    }
                 });
             }
         }
