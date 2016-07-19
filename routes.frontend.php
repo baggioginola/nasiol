@@ -27,8 +27,8 @@ $app->get('/nano-capas-catalogo', function() use ($app){
     $app->render('nano_capas_catalogo.php');
 });
 
-$app->get('/acerca', function() use ($app){
-    $app->render('acerca.php');
+$app->get('/quienes-somos', function() use ($app){
+    $app->render('quienes_somos.php');
 });
 
 $app->get('/franquicia', function() use ($app){

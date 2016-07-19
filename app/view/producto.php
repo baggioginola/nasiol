@@ -11,9 +11,7 @@
         <!-- breadcrumb-->
         <div class="breadcrumb-pro">
 
-            <a href="http://www.nasiol.com/">Home</a>
-
-            &raquo; <a href="http://www.nasiol.com/products">Nano coatings</a>
+            <a href="<?php echo DOMAIN; ?>">Inicio</a>
 
             &raquo; <a href="http://www.nasiol.com/products/car-coating">CAR SURFACE PROTECTION</a>
 

@@ -3468,11 +3468,11 @@ input.quantity-text {
 #footer .column1, #footer .column2, #footer .column3, #footer .column4 {
     float:left;
 }
-#footer .column1 {  width: 532px; }
+#footer .column1 {  width: 465px; }
 #footer .column1 ul { margin:0; padding:0;}
 #footer .column1 ul li { display:inline-block; vertical-align:top; margin-right:22px;}
-#footer .column2 { width:150px; border-right:1px solid #fff;  height: 120px; }
-#footer .column3 { width:170px; padding-left:30px; border-right:1px solid #fff; height: 120px; }
+#footer .column2 { width:185px; border-right:1px solid #fff;  height: 120px; }
+#footer .column3 { width:200px; padding-left:30px; border-right:1px solid #fff; height: 120px; }
 #footer .column4 {  padding-left: 38px;
     width: 273px;}
 

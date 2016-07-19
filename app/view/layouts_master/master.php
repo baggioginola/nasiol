@@ -61,7 +61,7 @@ if($resourceUri == '/') {
 
 <div id="container-wrapper"><?php echo $yield; ?></div>
 
-<div style="clear:both;"></div>
+<div style="clear:both;"><br /> <br /></div>
 
 <?php require_once TEMPLATE . 'footer.php'; ?>
 

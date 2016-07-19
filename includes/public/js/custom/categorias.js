@@ -7,9 +7,6 @@ $(document).ready(function ()
     var name = url[url.length - 1];
     var type = 'categorias';
 
-    var base_root = location.origin = location.protocol + "//" + location.host + '/';
-    var extra_root = 'vc/test/Github/nasiol/';
-
     var base_root_images = base_root + extra_root + 'panel-control/includes/public/img/' + type + '/' + name + '/';
 
     for(var i = 0; i < 4; i++) {

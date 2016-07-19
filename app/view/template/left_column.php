@@ -5,7 +5,7 @@
         <div class="box-content">
             <ul class="box-category">
                 <li>
-                    <div id="coll_cate"><a href="#">All<br/>Nano coatings</a></div>
+                    <div id="coll_cate"><a href="#">Todos<br/>Productos</a></div>
                     <ul style="display:block !important;" class="subnew">
                     </ul>
                 </li>

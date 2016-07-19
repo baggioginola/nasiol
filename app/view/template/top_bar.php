@@ -8,8 +8,8 @@
                     <div id="language-options" style="display: none;">
                         <div class="arrow-up"></div>
                         <div id="language-options-inner">
-                            <a style="background: url('includes/public/img/flags/tr.png') 20px 50% no-repeat;" onclick="$('input[name=\'language_code\']').attr('value', 'tr').submit(); $(this).parent().parent().parent().parent().parent().submit();">TÜRKÇE</a>
-                            <a style="background: url('includes/public/img/flags/gb.png') 20px 50% no-repeat;" onclick="$('input[name=\'language_code\']').attr('value', 'en').submit(); $(this).parent().parent().parent().parent().parent().submit();">ENGLISH</a>
+                            <a style="background: url('includes/public/img/flags/tr.png') 20px 50% no-repeat;" >ESPAñOL</a>
+                            <a style="background: url('includes/public/img/flags/gb.png') 20px 50% no-repeat;">ENGLISH</a>
                         </div>
                     </div>
                 </div>
