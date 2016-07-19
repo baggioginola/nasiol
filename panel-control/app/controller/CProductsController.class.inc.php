@@ -117,7 +117,7 @@ class Products extends BaseController
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        if(!$result = ProductsModel::singleton()->getByName($this->parameters['key_nombre'])) {
+        if(!$result = ProductsModel::singleton()->getByName($this->parameters['key_nombre'], $this->parameters['id_categoria'])) {
             return json_encode($this->getResponse(STATUS_FAILURE_CLIENT, MESSAGE_EMPTY));
         }
 

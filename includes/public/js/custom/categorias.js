@@ -8,7 +8,7 @@ $(document).ready(function ()
     var type = 'categorias';
 
     var base_root = location.origin = location.protocol + "//" + location.host + '/';
-    var extra_root = 'Github/nasiol/';
+    var extra_root = 'vc/test/Github/nasiol/';
 
     var base_root_images = base_root + extra_root + 'panel-control/includes/public/img/' + type + '/';
 
@@ -26,10 +26,14 @@ $(document).ready(function ()
     var data = {key_nombre:name};
     url = 'categorias/getByName';
     $.post(url, data, function (response, status) {
-        console.log(response);
         if (status == 'success') {
             if(response.status == 200) {
                 $('#category-name').text(response.data.nombre).attr('href',response.data.key_nombre);
+                var url_getProducts = 'productos/getByCategory';
+                var dataProducts = {id_categoria:response.data.id};
+                $.post(url_getProducts, dataProducts, function (response, status) {
+
+                });
             }
         }
     }, 'json');

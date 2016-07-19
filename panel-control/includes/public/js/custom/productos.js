@@ -16,7 +16,7 @@ $(document).ready(function ()
         overwriteInitial: false,
         purifyHtml: true,
         uploadExtraData: function (previewId, index) {
-            var info = {"type": "productos", "name" : $("#id_nombre").val()};
+            var info = {"type": "productos", "name" : $("#id_nombre").val(), "categoria" : $("#id_categoria option:selected").text()};
             return info;
         }
     }).on('filebatchuploadsuccess', function(event, data) {
@@ -91,7 +91,7 @@ $(document).ready(function ()
         }
 
         var url = 'productos/checkDuplicatedName';
-        var data_name = {nombre:$('#id_nombre').val()}
+        var data_name = {nombre:$('#id_nombre').val(), id_categoria:$('#id_categoria').val()}
 
         var checkDuplicated = $.ajax({
             url: url,

@@ -29,14 +29,14 @@
             <div class="form-group has-feedback">
                 <label for="descripcion" class="col-lg-2 control-label">Descripcion</label>
                 <div class="col-lg-10">
-                    <textarea class="form-control" rows="5" id="id_descripcion" name="descripcion" required style="resize: none;"></textarea>
+                    <textarea class="form-control" rows="5" id="id_descripcion" name="descripcion" required style="resize: none;" autocomplete=""off"></textarea>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>
             <div class="form-group has-feedback">
                 <label for="ejemplo_email_3" class="col-lg-2 control-label">Especificaciones</label>
                 <div class="col-lg-10">
-                    <textarea class="form-control" rows="5" id="id_especificaciones" name="especificaciones" required style="resize: none;"></textarea>
+                    <textarea class="form-control" rows="5" id="id_especificaciones" name="especificaciones" required style="resize: none;" autocomplete=""off"></textarea>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>

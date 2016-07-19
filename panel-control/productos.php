@@ -47,4 +47,12 @@ $app->group('/productos', function () use($app) {
         }
         echo $result;
     });
+
+    $app->post('/checkDuplicatedName', function() use($app){
+        require_once __CONTROLLER__ . 'CProductsController.class.inc.php';
+        if(!$result = Products::singleton()->checkDuplicatedName()) {
+            echo 'Fail';
+        }
+        echo $result;
+    });
 });

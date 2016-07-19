@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: mario.cuevas
- * Date: 6/24/2016
- * Time: 4:46 PM
+ * Date: 7/18/2016
+ * Time: 5:02 PM
  */
 
 require_once 'CBaseController.class.inc.php';
-require_once __MODEL__ . 'CCategoriesModel.class.inc.php';
+require_once __MODEL__ . 'CProductsModel.class.inc.php';
 
-class Categories extends BaseController
+class Products extends BaseController
 {
     private static $object = null;
 
@@ -17,15 +17,16 @@ class Categories extends BaseController
 
     private $validParameters = array(
         'id' => TYPE_INT,
+        'id_categoria' => TYPE_INT,
         'nombre' => TYPE_ALPHA,
         'active' => TYPE_INT,
         'imagenes' => TYPE_ALPHA,
-        'key_nombre' => TYPE_ALPHA
+        'descripcion' => TYPE_ALPHA,
+        'precio' => TYPE_FLOAT,
+        'especificaciones' => TYPE_ALPHA
+
     );
 
-    /**
-     * @return Categories|null
-     */
     public static function singleton()
     {
         if (is_null(self::$object)) {
@@ -34,34 +35,41 @@ class Categories extends BaseController
         return self::$object;
     }
 
-    /**
-     * @return string
-     */
     public function getAll()
     {
-        if($result = CategoriesModel::singleton()->getAll()) {
+        if($result = ProductsModel::singleton()->getAll()) {
             return json_encode($this->getResponse(STATUS_SUCCESS, MESSAGE_SUCCESS, $result));
         }
         return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
     }
 
-   
     /**
      * @return string
      */
-    public function getByName()
+    public function getById()
     {
         if (!$this->_setParameters()) {
             return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
         }
 
-        if($result = CategoriesModel::singleton()->getByName($this->parameters['key_nombre'])) {
+        if($result = ProductsModel::singleton()->getById($this->parameters['id'])) {
             return json_encode($this->getResponse(STATUS_SUCCESS, MESSAGE_SUCCESS, $result));
         }
 
         return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
     }
 
+    public function getByCategory()
+    {
+        if(!$this->_setParameters()) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        if($result = ProductsModel::singleton()->getByCategory($this->parameters['id_categoria'])) {
+            return json_encode($this->getResponse(STATUS_SUCCESS, MESSAGE_SUCCESS, $result));
+        }
+        return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+    }
 
     /**
      * @return bool
@@ -79,6 +87,7 @@ class Categories extends BaseController
         foreach ($_POST as $key => $value) {
             $this->parameters[$key] = $value;
         }
+
         return true;
     }
 }

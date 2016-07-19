@@ -111,7 +111,7 @@ class CategoriesModel extends Database
 
         $result_array = array();
 
-        $query = "SELECT id,nombre, key_nombre FROM " . self::$table . " WHERE key_nombre = '" . $name . "' ";
+        $query = "SELECT id,nombre, key_nombre FROM " . self::$table . " WHERE key_nombre = '" . $name . "' and active = true";
 
         if (!$result = $this->query($query)) {
             return false;

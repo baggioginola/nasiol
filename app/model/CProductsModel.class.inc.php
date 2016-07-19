@@ -2,10 +2,9 @@
 /**
  * Created by PhpStorm.
  * User: mario.cuevas
- * Date: 7/6/2016
- * Time: 4:01 PM
+ * Date: 7/18/2016
+ * Time: 5:08 PM
  */
-
 require_once CLASSES . 'CDatabase.class.inc.php';
 
 class ProductsModel extends Database
@@ -47,29 +46,6 @@ class ProductsModel extends Database
         return $result_array;
     }
 
-    /**
-     * @param array $data
-     * @return bool|int|string
-     */
-    public function add($data = array())
-    {
-        if (empty($data)) {
-            return false;
-        }
-
-        if (!$this->connect()) {
-            return false;
-        }
-
-        if (!$this->insert($data, self::$table)) {
-            return false;
-        }
-
-        $this->close_connection();
-
-        return true;
-    }
-
     public function getById($id = '')
     {
         if (empty($id)) {
@@ -100,9 +76,9 @@ class ProductsModel extends Database
         return $result_array;
     }
 
-    public function getByName($name = '', $id_categoria = '')
+    public function getByName($name = '', $id_categoy = '')
     {
-        if (empty($name) || empty($id_categoria)) {
+        if (empty($name) || empty($id_category)) {
             return false;
         }
 
@@ -114,7 +90,7 @@ class ProductsModel extends Database
 
         $query = "SELECT " . self::$table . ".id, " . self::$table . ".nombre FROM " . self::$table . "
                     INNER JOIN categoria on " . self::$table . ".id_categoria = categoria.id
-                    WHERE producto.key_nombre = '" . $name . "' and producto.active = true and categoria.id = " .$id_categoria;
+                    WHERE producto.key_nombre = '" . $name . "' and producto.active = true and categoria.id = " .$id_category;
 
         if (!$result = $this->query($query)) {
             return false;
@@ -129,26 +105,32 @@ class ProductsModel extends Database
         return $result_array;
     }
 
-    /**
-     * @param array $data
-     * @return bool|int|string
-     */
-    public function edit($data = array(), $id = '')
+    public function getByCategory($id_category = '')
     {
-        if (empty($data) || empty($id)) {
+        if(empty($id_category)) {
             return false;
         }
 
-        if (!$this->connect()) {
+        if(!$this->connect()) {
             return false;
         }
 
-        if (!$result = $this->update($data, $id, self::$table)) {
+        $result_array = array();
+
+        $query = "SELECT " . self::$table . ".nombre FROM " . self::$table . "
+                    INNER JOIN categoria ON " . self::$table . ".id_categoria = categoria.id
+                    WHERE categoria.id = " . $id_category . " AND producto.active = true";
+
+        if (!$result = $this->query($query)) {
             return false;
         }
 
         $this->close_connection();
 
-        return $result;
+        while($row = $this->fetch_assoc($result)) {
+            $result_array[] = $row;
+        }
+
+        return $result_array;
     }
 }

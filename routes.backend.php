@@ -25,3 +25,14 @@ $app->group('/categorias', function () use($app) {
 
     });
 });
+
+$app->group('/productos', function () use($app) {
+    $app->post('/getByCategory', function() use($app){
+        require_once __CONTROLLER__.'CProductsController.class.inc.php';
+        if(!$result = Products::singleton()->getByCategory()){
+            echo 'Fail';
+        }
+        echo $result;
+
+    });
+});

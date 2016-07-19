@@ -18,12 +18,17 @@ class Images extends BaseController
     private $name = null;
     private $pathImage = null;
     private $type = null;
+    private $category = null;
 
     private $sizes = array(
         'categorias' => array('0' => array('width' => 927, 'height' => 285),
             '1' => array('width' => 307, 'height' => 128),
             '2' => array('width' => 307, 'height' => 128),
-            '3' => array('width' => 307, 'height' => 128))
+            '3' => array('width' => 307, 'height' => 128)),
+        'productos' => array('0' => array('width' => 420, 'height' => 420 ),
+            '1' => array('width' => 420, 'height' => 420),
+            '2' => array('width' => 420, 'height' => 420),
+            '3' => array('width' => 420, 'height' => 420))
     );
 
     /**
@@ -49,6 +54,12 @@ class Images extends BaseController
 
         if(!CDir::singleton()->createDir($this->pathImage)) {
             return false;
+        }
+
+        if($this->type == 'categorias') {
+            if(!CDir::singleton()->createDir($this->pathImage . '/productos/')) {
+                return false;
+            }
         }
 
         if (!$this->_setParameters()) {
@@ -98,9 +109,17 @@ class Images extends BaseController
             return false;
         }
 
+        if(isset($_REQUEST['categoria'])) {
+            $this->category = formatForUrl($_REQUEST['categoria']);
+        }
         $this->type = trim($_REQUEST['type']);
-        $this->pathImage = BASE_IMAGES . $this->type . "/" . $this->name . "/";
 
+        if($this->type == 'categorias') {
+            $this->pathImage = BASE_IMAGES . $this->type . "/" . $this->name . "/";
+        }
+        else {
+            $this->pathImage = BASE_IMAGES . "categorias/" . $this->category . "/" . $this->type . "/" . $this->name . '/';
+        }
         return true;
     }
 
