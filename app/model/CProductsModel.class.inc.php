@@ -117,7 +117,8 @@ class ProductsModel extends Database
 
         $result_array = array();
 
-        $query = "SELECT " . self::$table . ".nombre FROM " . self::$table . "
+        $query = "SELECT " . self::$table . ".nombre, " . self::$table . ".key_nombre as key_nombre, categoria.key_nombre as categoria
+                    FROM " . self::$table . "
                     INNER JOIN categoria ON " . self::$table . ".id_categoria = categoria.id
                     WHERE categoria.id = " . $id_category . " AND producto.active = true";
 

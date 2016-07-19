@@ -44,16 +44,11 @@ $app->get('/videos-producto', function() use ($app){
 });
 
 
-/*$app->get('/proteccion-superficie-carro', function() use ($app){
+$app->get('/:category', function() use ($app) {
     $app->render('categoria.php');
 });
-*/
 
-$app->get('/proteccion-superficie-carro/:id', function() use ($app){
-    $data = array('id_producto' => 1, 'nombre' => 'Test');
-    $app->render('producto.php',array('resultados' => $data));
-});
 
-$app->get('/:id', function() use ($app) {
-    $app->render('categoria.php');
+$app->get('/:category/:product', function() use ($app) {
+    $app->render('producto.php');
 });
