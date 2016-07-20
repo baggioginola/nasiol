@@ -20,7 +20,7 @@ class Products extends BaseController
         'id_categoria' => TYPE_INT,
         'nombre' => TYPE_ALPHA,
         'active' => TYPE_INT,
-        'imagenes' => TYPE_ALPHA,
+        'imagenes' => TYPE_INT,
         'descripcion' => TYPE_ALPHA,
         'precio' => TYPE_FLOAT,
         'especificaciones' => TYPE_ALPHA

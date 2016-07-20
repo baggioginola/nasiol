@@ -35,4 +35,12 @@ $app->group('/productos', function () use($app) {
         echo $result;
 
     });
+    $app->post('/getByName', function() use($app){
+        require_once __CONTROLLER__.'CProductsController.class.inc.php';
+        if(!$result = Products::singleton()->getByName()){
+            echo 'Fail';
+        }
+        echo $result;
+
+    });
 });

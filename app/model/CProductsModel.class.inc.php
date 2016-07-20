@@ -12,6 +12,9 @@ class ProductsModel extends Database
     private static $object = null;
     private static $table = 'producto';
 
+    /**
+     * @return null|ProductsModel
+     */
     public static function singleton()
     {
         if(is_null(self::$object)) {
@@ -46,6 +49,10 @@ class ProductsModel extends Database
         return $result_array;
     }
 
+    /**
+     * @param string $id
+     * @return array|bool|null
+     */
     public function getById($id = '')
     {
         if (empty($id)) {
@@ -76,7 +83,12 @@ class ProductsModel extends Database
         return $result_array;
     }
 
-    public function getByName($name = '', $id_categoy = '')
+    /**
+     * @param string $name
+     * @param string $id_categoy
+     * @return array|bool|null
+     */
+    public function getByName($name = '', $id_category = '')
     {
         if (empty($name) || empty($id_category)) {
             return false;
@@ -88,7 +100,9 @@ class ProductsModel extends Database
 
         $result_array = array();
 
-        $query = "SELECT " . self::$table . ".id, " . self::$table . ".nombre FROM " . self::$table . "
+        $query = "SELECT " . self::$table . ".id, " . self::$table . ".nombre, " . self::$table . ".key_nombre, " . self::$table . ".imagenes,
+                    " .self::$table . ".descripcion, " . self::$table . ".especificaciones
+                    FROM " . self::$table . "
                     INNER JOIN categoria on " . self::$table . ".id_categoria = categoria.id
                     WHERE producto.key_nombre = '" . $name . "' and producto.active = true and categoria.id = " .$id_category;
 
@@ -105,6 +119,10 @@ class ProductsModel extends Database
         return $result_array;
     }
 
+    /**
+     * @param string $id_category
+     * @return array|bool
+     */
     public function getByCategory($id_category = '')
     {
         if(empty($id_category)) {

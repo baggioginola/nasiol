@@ -7,21 +7,21 @@ $(document).ready(function ()
     var name = url[url.length - 1];
     var type = 'categorias';
 
-    var base_root_images = base_root + extra_root + 'panel-control/includes/public/img/' + type + '/' + name + '/';
+    var IMAGES_CATEGORY = IMAGES + type + '/' + name + '/';
 
     for(var i = 0; i < 4; i++) {
-        var src = getImage(base_root_images, name, i);
+        var src = getImage(IMAGES_CATEGORY, name, i);
         $('#category-' + i).attr('src', src);
         $('#category-' + i).attr('alt', name);
     }
 
     var data = {key_nombre:name};
-    url = 'categorias/getByName';
+    url = BASE_ROOT + 'categorias/getByName';
     $.post(url, data, function (response, status) {
         if (status == 'success') {
             if(response.status == 200) {
                 $('#category-name').text(response.data.nombre).attr('href',response.data.key_nombre);
-                var url_getProducts = 'productos/getByCategory';
+                var url_getProducts = BASE_ROOT + 'productos/getByCategory';
                 var dataProducts = {id_categoria:response.data.id};
                 $.ajax({
                     url: url_getProducts,
@@ -34,8 +34,8 @@ $(document).ready(function ()
                         var productForm = [];
                         var box_product = $('.box-product');
                         $.each(response.data, function (key,value) {
-                            var base_root_images_products = base_root_images + 'productos/' + value.key_nombre + '/';
-                            var src = getImage(base_root_images_products, value.key_nombre, 0);
+                            var IMAGES_PRODUCTS = IMAGES_CATEGORY + 'productos/' + value.key_nombre + '/';
+                            var src = getImage(IMAGES_PRODUCTS, value.key_nombre, 0);
                             productForm = [
                                 '<div>',
                                 '<div class="boxgrid">',
@@ -79,20 +79,3 @@ $(document).ready(function ()
         }
     }, 'json');
 });
-
-function getImage(base_root_images, name, i)
-{
-    var url = base_root_images + name + '-' + i + '.jpg';
-    var exists = $.ajax({
-        url: url,
-        type: "POST",
-        cache: false,
-        dataType: 'json',
-        async: false
-    });
-
-    if(exists.status != 200) {
-        return base_root_images + name + '-' + i + '.png';
-    }
-    return url;
-}

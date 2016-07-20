@@ -7,8 +7,8 @@ $(document).ready(function ()
     $("#id_imagen").fileinput({
         uploadUrl: "imagenes/add",
         allowedFileExtensions: ["jpg", "png"],
-        maxFileCount: 4,
-        minFileCount : 4,
+        maxFileCount: 6,
+        minFileCount : 2,
         uploadAsync: false,
         language: "es",
         showUpload: false,
@@ -17,6 +17,7 @@ $(document).ready(function ()
         purifyHtml: true,
         uploadExtraData: function (previewId, index) {
             var info = {"type": "productos", "name" : $("#id_nombre").val(), "categoria" : $("#id_categoria option:selected").text()};
+
             return info;
         }
     }).on('filebatchuploadsuccess', function(event, data) {
@@ -114,7 +115,10 @@ $(document).ready(function ()
             return false;
         }
 
+        var fileStack = $("#id_imagen").fileinput('getFileStack');
+
         var data = $(this).serialize();
+        data = data + '&' + $.param({'imagenes': fileStack.length});
         var type = $('#submit_type').val();
         if (type == 'productos/edit') {
             var id = $('#submit_id').val();

@@ -33,7 +33,7 @@ CREATE TABLE `categoria` (
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 `active` boolean DEFAULT TRUE,
-`imagenes` TEXT,
+`imagenes` int(5),
 PRIMARY KEY(`id`),
 INDEX(`key_nombre`)
 ) ENGINE= InnoDB DEFAULT CHARSET = latin1;
@@ -47,7 +47,7 @@ CREATE TABLE `producto` (
 `id_categoria` int(11) NOT NULL,
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-`imagenes` TEXT,
+`imagenes` int(5),
 `precio` decimal(10,2),
 `descripcion` TEXT,
 `url_video` varchar(250),

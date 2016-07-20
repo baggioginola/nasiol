@@ -28,7 +28,10 @@ class Images extends BaseController
         'productos' => array('0' => array('width' => 420, 'height' => 420 ),
             '1' => array('width' => 420, 'height' => 420),
             '2' => array('width' => 420, 'height' => 420),
-            '3' => array('width' => 420, 'height' => 420))
+            '3' => array('width' => 420, 'height' => 420),
+            '4' => array('width' => 420, 'height' => 420),
+            '5' => array('width' => 420, 'height' => 420)
+        )
     );
 
     /**

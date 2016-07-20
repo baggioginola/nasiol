@@ -23,10 +23,14 @@ class Products extends BaseController
         'imagenes' => TYPE_ALPHA,
         'descripcion' => TYPE_ALPHA,
         'precio' => TYPE_FLOAT,
-        'especificaciones' => TYPE_ALPHA
+        'especificaciones' => TYPE_ALPHA,
+        'key_nombre' => TYPE_ALPHA
 
     );
 
+    /**
+     * @return null|Products
+     */
     public static function singleton()
     {
         if (is_null(self::$object)) {
@@ -35,6 +39,9 @@ class Products extends BaseController
         return self::$object;
     }
 
+    /**
+     * @return string
+     */
     public function getAll()
     {
         if($result = ProductsModel::singleton()->getAll()) {
@@ -59,6 +66,9 @@ class Products extends BaseController
         return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
     }
 
+    /**
+     * @return string
+     */
     public function getByCategory()
     {
         if(!$this->_setParameters()) {
@@ -68,6 +78,22 @@ class Products extends BaseController
         if($result = ProductsModel::singleton()->getByCategory($this->parameters['id_categoria'])) {
             return json_encode($this->getResponse(STATUS_SUCCESS, MESSAGE_SUCCESS, $result));
         }
+        return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+    }
+
+    /**
+     * @return string
+     */
+    public function getByName()
+    {
+        if (!$this->_setParameters()) {
+            return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
+        }
+
+        if($result = ProductsModel::singleton()->getByName($this->parameters['key_nombre'], $this->parameters['id_categoria'])) {
+            return json_encode($this->getResponse(STATUS_SUCCESS, MESSAGE_SUCCESS, $result));
+        }
+
         return json_encode($this->getResponse(STATUS_FAILURE_INTERNAL, MESSAGE_ERROR));
     }
 

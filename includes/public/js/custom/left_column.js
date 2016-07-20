@@ -3,7 +3,7 @@
  */
 $(document).ready(function ()
 {
-    url = base_root + extra_root + 'categorias/getAll';
+    url = BASE_ROOT + 'categorias/getAll';
 
     $.post(url, function (response, status) {
         if (status == 'success') {
@@ -13,7 +13,7 @@ $(document).ready(function ()
                 $.each(response.data, function(key, value)
                 {
                     var li = $('<li/>').appendTo(box_category);
-                    var a = $('<a/>').text(value.nombre).attr('href',base_root + extra_root +value.key_nombre).appendTo(li);
+                    var a = $('<a/>').text(value.nombre).attr('href',BASE_ROOT + value.key_nombre).appendTo(li);
                 });
             }
         }

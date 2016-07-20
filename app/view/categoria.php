@@ -7,7 +7,6 @@
     <div id="content">
         <div id="breadcrumb-center" class="breadcrumb1">
             <a href="<?php echo DOMAIN; ?>">Inicio</a>
-            &raquo; <a href="#">Nano coatings</a>
             &raquo; <a href="#" id="category-name" style="text-transform: uppercase"></a>
         </div>
 

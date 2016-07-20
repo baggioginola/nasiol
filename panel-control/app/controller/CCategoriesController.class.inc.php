@@ -19,7 +19,7 @@ class Categories extends BaseController
         'id' => TYPE_INT,
         'nombre' => TYPE_ALPHA,
         'active' => TYPE_INT,
-        'imagenes' => TYPE_ALPHA
+        'imagenes' => TYPE_INT
     );
 
     /**

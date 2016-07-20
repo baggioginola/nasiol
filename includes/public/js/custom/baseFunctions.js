@@ -4,12 +4,9 @@
 /* =================
 global root variables
 ===================== */
-var base_root = location.origin = location.protocol + "//" + location.host + '/';
-var extra_root = 'vc/test/Github/nasiol/';
-
 $(document).ready(function ()
 {
-    url = base_root + extra_root + 'categorias/getAll';
+    url = BASE_ROOT + 'categorias/getAll';
 
     $.post(url, function (response, status) {
         if (status == 'success') {
@@ -20,9 +17,26 @@ $(document).ready(function ()
                 $.each(response.data, function(key, value)
                 {
                     var li = $('<li/>').appendTo(ul);
-                    var a = $('<a/>').text(value.nombre).attr('href',base_root + extra_root + value.key_nombre).appendTo(li);
+                    var a = $('<a/>').text(value.nombre).attr('href',BASE_ROOT + value.key_nombre).appendTo(li);
                 });
             }
         }
     }, 'json');
 });
+
+function getImage(root_images, name, i)
+{
+    var url = root_images + name + '-' + i + '.jpg';
+    var exists = $.ajax({
+        url: url,
+        type: "POST",
+        cache: false,
+        dataType: 'json',
+        async: false
+    });
+
+    if(exists.status != 200) {
+        return root_images + name + '-' + i + '.png';
+    }
+    return url;
+}
