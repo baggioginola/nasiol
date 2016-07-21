@@ -56,3 +56,20 @@ function masterDatatable(url, columns) {
     });
     return (dataTable);
 }
+
+function getImage(root_images, name, i)
+{
+    var url = root_images + name + '-' + i + '.jpg';
+    var exists = $.ajax({
+        url: url,
+        type: "POST",
+        cache: false,
+        dataType: 'json',
+        async: false
+    });
+
+    if(exists.status != 200) {
+        return root_images + name + '-' + i + '.png';
+    }
+    return url;
+}

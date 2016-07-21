@@ -46,9 +46,29 @@ $(document).ready(function ()
 
         $.post(url, data, function (response, status) {
             if (status == 'success') {
+
+                var images = [];
+
+                var IMAGES_CATEGORY = IMAGES + 'categorias' + '/' + response.key_nombre + '/';
+                for(var i = 0; i < 4; i++) {
+                    var src = getImage(IMAGES_CATEGORY, response.key_nombre, i);
+                    console.log(src);
+                    images[i] = '<img src="'+src+'" class="file-preview-image" alt="Desert" title="Desert">';
+                }
+
+                console.log(images);
+                $('#id_imagen').fileinput('refresh', {
+                    initialPreview: images,
+                    initialPreviewFileType: 'image',
+                    initialPreviewConfig: [
+                        {caption: "Nature-1.jpg", size: 847000, key: 11},
+                        {caption: "Nature-2.jpg", size: 817000, key: 12}
+                    ]
+
+                });
+
                 $.each(response, function (key, val) {
                     $("input[name=" + key + "]").val(val);
-                    $("select[name=" + key + "]").val(val);
                 });
             }
             $('#submit_id').val(response.id);

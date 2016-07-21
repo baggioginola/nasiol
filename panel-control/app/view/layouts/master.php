@@ -42,6 +42,7 @@
 <script src="<?php echo JS; ?>bootstrap.js"></script>
 <script src="<?php echo JS; ?>custom/baseFunctions.js"></script>
 <script src="<?php echo JS; ?>bootbox.min.js"></script>
+<script type="text/javascript" src="<?php echo JS; ?>custom/config.js" ></script>
 <script type="text/javascript" src="<?php echo JS; ?>validator.js"></script>
 <script type="text/javascript" src="<?php echo JS; ?>functions.js" ></script>
 <script type="text/javascript" src="<?php echo DATATABLE; ?>datatable.js"></script>
