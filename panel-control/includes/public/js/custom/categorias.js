@@ -52,17 +52,20 @@ $(document).ready(function ()
                 var IMAGES_CATEGORY = IMAGES + 'categorias' + '/' + response.key_nombre + '/';
                 for(var i = 0; i < 4; i++) {
                     var src = getImage(IMAGES_CATEGORY, response.key_nombre, i);
-                    console.log(src);
-                    images[i] = '<img src="'+src+'" class="file-preview-image" alt="Desert" title="Desert">';
+                    images[i] = '<img src="'+src+'" class="file-preview-image" alt="Desert" title="Desert" style="width:auto; height:160px;">';
                 }
 
                 console.log(images);
                 $('#id_imagen').fileinput('refresh', {
                     initialPreview: images,
                     initialPreviewFileType: 'image',
+                    fileActionSettings : {showDrag: false},
+                    initialPreviewShowDelete: true,
                     initialPreviewConfig: [
                         {caption: "Nature-1.jpg", size: 847000, key: 11},
-                        {caption: "Nature-2.jpg", size: 817000, key: 12}
+                        {caption: "Nature-2.jpg", size: 817000, key: 12},
+                        {caption: "Nature-1.jpg", size: 847000, key: 11},
+                        {caption: "Nature-1.jpg", size: 847000, key: 11}
                     ]
 
                 });
