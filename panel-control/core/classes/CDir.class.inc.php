@@ -31,7 +31,7 @@ class CDir{
             return true;
         }
 
-        mkdir($this->dir, 0770);
+        mkdir($this->dir, 0777);
         return true;
     }
 

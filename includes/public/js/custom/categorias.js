@@ -21,6 +21,7 @@ $(document).ready(function ()
         if (status == 'success') {
             if(response.status == 200) {
                 $('#category-name').text(response.data.nombre).attr('href',response.data.key_nombre);
+                $('.pad23').text(response.data.descripcion);
                 var url_getProducts = BASE_ROOT + 'productos/getByCategory';
                 var dataProducts = {id_categoria:response.data.id};
                 $.ajax({
@@ -33,6 +34,8 @@ $(document).ready(function ()
                     success: function (response) {
                         var productForm = [];
                         var box_product = $('.box-product');
+                        var length = response.data.length;
+                        $('.results').text('Mostrando ' + length + ' resultados');
                         $.each(response.data, function (key,value) {
                             var IMAGES_PRODUCTS = IMAGES_CATEGORY + 'productos/' + value.key_nombre + '/';
                             var src = getImage(IMAGES_PRODUCTS, value.key_nombre, 0);

@@ -90,6 +90,7 @@ class Images extends BaseController
                 $this->pathImage . $this->parameters[$parameter]['name'])) {
                 return false;
             }
+            chmod($this->pathImage . $this->parameters[$parameter]['name'], 0777);
         }
 
         foreach ($this->parameters as $parameter => $value) {

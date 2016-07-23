@@ -29,6 +29,7 @@ DROP TABLE IF EXISTS `categoria`;
 CREATE TABLE `categoria` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `nombre` varchar(500) NOT NULL,
+`descripcion` varchar(500) NOT NULL,
 `key_nombre` varchar(500) NOT NULL,
 `fecha_alta` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `fecha_modifica` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

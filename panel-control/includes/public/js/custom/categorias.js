@@ -71,7 +71,9 @@ $(document).ready(function ()
                 });
 
                 $.each(response, function (key, val) {
+
                     $("input[name=" + key + "]").val(val);
+                    $("textarea[name=" + key + "]").val(val);
                 });
             }
             $('#submit_id').val(response.id);
