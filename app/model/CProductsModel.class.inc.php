@@ -101,7 +101,7 @@ class ProductsModel extends Database
         $result_array = array();
 
         $query = "SELECT " . self::$table . ".id, " . self::$table . ".nombre, " . self::$table . ".key_nombre, " . self::$table . ".imagenes,
-                    " .self::$table . ".descripcion, " . self::$table . ".especificaciones
+                    " .self::$table . ".descripcion, " . self::$table . ".especificaciones, " . self::$table . ".precio
                     FROM " . self::$table . "
                     INNER JOIN categoria on " . self::$table . ".id_categoria = categoria.id
                     WHERE producto.key_nombre = '" . $name . "' and producto.active = true and categoria.id = " .$id_category;

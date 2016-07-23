@@ -38,6 +38,7 @@ $(document).ready(function ()
                     var display_option = 'display: inline-block;';
                     $('#product-name').text(response_products.data.nombre).attr('href',BASE_ROOT + category + '/' + response_products.data.key_nombre);
                     $('.heading-prod').text(response_products.data.nombre);
+                    $('.subheading').text('$ '+response_products.data.precio);
                     $('#descripcion').text(response_products.data.descripcion);
                     $('#especificaciones').text(response_products.data.especificaciones);
                     for(var i = 0; i < response_products.data.imagenes; i++) {

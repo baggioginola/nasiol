@@ -43,7 +43,7 @@ Clean</span></div>
             <div id="conta">
                 <div id="left">
                     <h1 class="heading-prod"></h1>
-                    <!--<h1 class="subheading">NANO RAIN REPELLENT </h1>!-->
+                    <h1 class="subheading"></h1>
                 </div>
                 <div id="right">
 
