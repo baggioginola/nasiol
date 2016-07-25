@@ -53,7 +53,7 @@ Clean</span></div>
 silis<br />
 tech</span></div>
 
-                            <div id="bluelogo"><a href="http://www.ekspermarket.com/oto-urunleri/oto-dis/nasiol-glasshield-nano-yagmur-kaydirici" target="_blank"><img src="http://www.nasiol.com/catalog/view/theme/martha/image/blankspacer.png" /></a></div>
+                            <div id="bluelogo"><a href="#" target="_blank"><img src="http://www.nasiol.com/catalog/view/theme/martha/image/blankspacer.png" /></a></div>
                         </div>
 
 

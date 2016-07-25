@@ -50,7 +50,7 @@ $(document).ready(function ()
                         productImages = [
                         '<div style="',display_option,'">',
                         '<a href="" class="group1" >',
-                        '<img src="',src,'" class="example-image" />',
+                        '<img src="',src,'" class="example-image" id="img-circle" />',
                         '</a>',
                         '</div>'];
                         container.append(productImages.join(''));

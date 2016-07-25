@@ -13,7 +13,7 @@
         </div>
         <div id="hexagon">
             <p class="pad23">
-                NANO PROTECTION FOR YOUR CAR
+
             </p>
         </div>
     </div>
