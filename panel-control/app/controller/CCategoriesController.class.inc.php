@@ -146,6 +146,10 @@ class Categories extends BaseController
             if($key == 'nombre') {
                 $this->parameters['key_nombre'] = formatForUrl($value);
             }
+            if($key == 'descripcion') {
+                $this->parameters[$key] = stripExcessWhitespace(sanitizeVariable(trim($value)));
+                continue;
+            }
             $this->parameters[$key] = formatString($value);
         }
         return true;

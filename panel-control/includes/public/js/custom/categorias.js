@@ -23,9 +23,11 @@ $(document).ready(function ()
     });
 
     $('#reset_button').click(function () {
+        $("#id_imagen").fileinput("refresh");
         $('#form_global').trigger("reset");
         $('#submit_type').val('categorias/add');
         $('#submit_id').val('');
+
         return false;
     });
 
@@ -55,7 +57,6 @@ $(document).ready(function ()
                     images[i] = '<img src="'+src+'" class="file-preview-image" alt="Desert" title="Desert" style="width:auto; height:160px;">';
                 }
 
-                console.log(images);
                 $('#id_imagen').fileinput('refresh', {
                     initialPreview: images,
                     initialPreviewFileType: 'image',

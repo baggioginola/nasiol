@@ -22,6 +22,15 @@ $(document).ready(function ()
             if(response.status == 200) {
                 $('#category-name').text(response.data.nombre).attr('href',response.data.key_nombre);
                 $('.pad23').text(response.data.descripcion);
+                var description = (response.data.descripcion).split('\r\n');
+                var description_html = [];
+                var category_banner_top = $('.category-banner-top');
+
+                for (var i = 0; i < description.length; i++) {
+                    description_html = ['<p class="frame-',(i + 1),'">',description[i],'</p>'];
+                    category_banner_top.append(description_html.join(''));
+                }
+
                 var url_getProducts = BASE_ROOT + 'productos/getByCategory';
                 var dataProducts = {id_categoria:response.data.id};
                 $.ajax({

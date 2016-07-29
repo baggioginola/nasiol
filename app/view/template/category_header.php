@@ -17,13 +17,14 @@
     <div class="welcome-message">
         <div class="category-banner-top">
             <p>&nbsp;</p>
+            <!--
             <p class="frame-1">Car Nano paint protection</p>
             <p class="frame-2">9H Hardness</p>
             <p class="frame-3">Ceramic Coating</p>
             <p class="frame-4">Nano Car Care</p>
-            <p class="frame-6"><span style="line-height: 1.6em;">Crystal Gloss</span></p>
+            <p class="frame-6">Crystal Gloss</p>
             <p class="frame-7">High Chemical Resistance</p>
-            <p class="frame-7">&nbsp;</p>
+            !-->
         </div>
     </div>
     <div style="display: none;">

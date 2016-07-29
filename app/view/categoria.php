@@ -11,9 +11,7 @@
         </div>
 
         <?php require_once TEMPLATE . 'category_header.php'; ?>
-
         <p style="padding-bottom:8%;"></p>
-
         <div class="box">
             <div class="box-content">
                 <div class="box-product">
@@ -21,7 +19,6 @@
                 </div>
             </div>
         </div>
-
         <div class="pagination">
             <div class="results"></div>
         </div>

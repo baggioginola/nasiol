@@ -58,7 +58,6 @@ if($resourceUri == '/') {
 }
 ?>
 
-
 <div id="container-wrapper"><?php echo $yield; ?></div>
 
 <div style="clear:both;"><br /> <br /></div>
